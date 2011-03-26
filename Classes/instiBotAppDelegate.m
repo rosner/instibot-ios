@@ -7,11 +7,11 @@
 //
 
 #import "InstibotAppDelegate.h"
-#import "InstibotViewController.h"
+#import "UPMessagesViewController.h"
 
 @interface InstibotAppDelegate ()
 
-@property (nonatomic, retain) InstibotViewController *instibotController;
+
 
 @end
 
@@ -20,17 +20,15 @@
 
 @synthesize window;
 
-@synthesize instibotController;
+@synthesize messagesViewController;
 
 
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-  
-  instibotController = [[InstibotViewController alloc] init];
     
-  [self.window addSubview:instibotController.view];
+  [self.window addSubview:messagesViewController.view];
   [self.window makeKeyAndVisible];
 
   return YES;
@@ -86,8 +84,8 @@
 
 
 - (void)dealloc {
-  [instibotController release];
-  instibotController = nil;
+  [messagesViewController release];
+  messagesViewController = nil;
   
   [window release];
   window = nil;

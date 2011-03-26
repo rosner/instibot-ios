@@ -8,15 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@class InstibotViewController;
+@class UPMessagesViewController;
 
 @interface InstibotAppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
   
-    InstibotViewController *instibotController;;
+  UIWindow *window;
+
+  UPMessagesViewController *messagesViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+
+@property (nonatomic, retain) IBOutlet UPMessagesViewController *messagesViewController;
 
 @end
 

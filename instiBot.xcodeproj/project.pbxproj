@@ -12,38 +12,28 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		28D7ACF80DDB3853001CB0EB /* InstibotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* InstibotViewController.m */; };
-		D12D573C1339593700BF53D0 /* SSMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12D57371339593700BF53D0 /* SSMessagesViewController.m */; };
-		D12D573D1339593700BF53D0 /* SSMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12D57391339593700BF53D0 /* SSMessageTableViewCell.m */; };
-		D12D573E1339593700BF53D0 /* SSMessageTableViewCellBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D12D573B1339593700BF53D0 /* SSMessageTableViewCellBubbleView.m */; };
-		D12D57441339595100BF53D0 /* SSMessagesViewControllerSendButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D57401339595100BF53D0 /* SSMessagesViewControllerSendButtonBackground.png */; };
-		D12D57451339595100BF53D0 /* SSMessagesViewControllerTextFieldBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D57411339595100BF53D0 /* SSMessagesViewControllerTextFieldBackground.png */; };
-		D12D57861339606900BF53D0 /* libTWToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D12D57831339604C00BF53D0 /* libTWToolkit.a */; };
 		D12D578C1339613500BF53D0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D12D578B1339613500BF53D0 /* Security.framework */; };
-		D12D6204133E35D600BF53D0 /* UPMessageTableViewCellBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D12D6203133E35D600BF53D0 /* UPMessageTableViewCellBubbleView.m */; };
-		D12D620A133E361B00BF53D0 /* Balloon_1~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6206133E361B00BF53D0 /* Balloon_1~iphone@2x.png */; };
-		D12D620C133E361B00BF53D0 /* Balloon_2~iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6208133E361B00BF53D0 /* Balloon_2~iphone@2x.png */; };
-		D12D621E133E39A900BF53D0 /* UPMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12D621D133E39A900BF53D0 /* UPMessageTableViewCell.m */; };
+		D12D626B133E42BA00BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6268133E42BA00BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png */; };
+		D12D6271133E42F500BF53D0 /* UPMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12D626F133E42F500BF53D0 /* UPMessagesViewController.m */; };
+		D12D6275133E441A00BF53D0 /* UPMessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12D6274133E441A00BF53D0 /* UPMessagesViewController.xib */; };
+		D12D629E133E47BA00BF53D0 /* UPMessageInputField.m in Sources */ = {isa = PBXBuildFile; fileRef = D12D629D133E47BA00BF53D0 /* UPMessageInputField.m */; };
+		D12D6465133E843D00BF53D0 /* Balloon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6457133E843D00BF53D0 /* Balloon_1.png */; };
+		D12D6466133E843D00BF53D0 /* Balloon_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6458133E843D00BF53D0 /* Balloon_1@2x.png */; };
+		D12D6467133E843D00BF53D0 /* Balloon_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6459133E843D00BF53D0 /* Balloon_2.png */; };
+		D12D6468133E843D00BF53D0 /* Balloon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D645A133E843D00BF53D0 /* Balloon_2@2x.png */; };
+		D12D6469133E843D00BF53D0 /* BalloonInputField.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D645B133E843D00BF53D0 /* BalloonInputField.png */; };
+		D12D646A133E843D00BF53D0 /* BalloonInputField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D645C133E843D00BF53D0 /* BalloonInputField@2x.png */; };
+		D12D646B133E843D00BF53D0 /* input-field-cover.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D645D133E843D00BF53D0 /* input-field-cover.png */; };
+		D12D646C133E843D00BF53D0 /* input-field-cover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D645E133E843D00BF53D0 /* input-field-cover@2x.png */; };
+		D12D646D133E843D00BF53D0 /* MessageEntryBG.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D645F133E843D00BF53D0 /* MessageEntryBG.png */; };
+		D12D646E133E843D00BF53D0 /* MessageEntryBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6460133E843D00BF53D0 /* MessageEntryBG@2x.png */; };
+		D12D646F133E843D00BF53D0 /* SendButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6461133E843D00BF53D0 /* SendButton.png */; };
+		D12D6470133E843D00BF53D0 /* SendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6462133E843D00BF53D0 /* SendButton@2x.png */; };
+		D12D6471133E843D00BF53D0 /* SendButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6463133E843D00BF53D0 /* SendButtonPressed.png */; };
+		D12D6472133E843D00BF53D0 /* SendButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6464133E843D00BF53D0 /* SendButtonPressed@2x.png */; };
 		D18C778F1326F57B003974AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18C778E1326F57B003974AA /* QuartzCore.framework */; };
 		D18C779D1326F635003974AA /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D18C779B1326F635003974AA /* MainWindow.xib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D12D57821339604C00BF53D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D12D57481339596800BF53D0 /* SSToolkit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = SSToolkit;
-		};
-		D12D57841339606000BF53D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D12D57481339596800BF53D0 /* SSToolkit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = SSToolkit;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -52,27 +42,30 @@
 		1D6058910D05DD3D006BFB54 /* instiBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instiBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		28D7ACF60DDB3853001CB0EB /* InstibotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstibotViewController.h; sourceTree = "<group>"; };
-		28D7ACF70DDB3853001CB0EB /* InstibotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstibotViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* instiBot_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = instiBot_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* instiBot-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "instiBot-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		D12D57361339593700BF53D0 /* SSMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMessagesViewController.h; path = ssmessagesviewcontroller/Classes/SSMessagesViewController.h; sourceTree = SOURCE_ROOT; };
-		D12D57371339593700BF53D0 /* SSMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMessagesViewController.m; path = ssmessagesviewcontroller/Classes/SSMessagesViewController.m; sourceTree = SOURCE_ROOT; };
-		D12D57381339593700BF53D0 /* SSMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMessageTableViewCell.h; path = ssmessagesviewcontroller/Classes/SSMessageTableViewCell.h; sourceTree = SOURCE_ROOT; };
-		D12D57391339593700BF53D0 /* SSMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMessageTableViewCell.m; path = ssmessagesviewcontroller/Classes/SSMessageTableViewCell.m; sourceTree = SOURCE_ROOT; };
-		D12D573A1339593700BF53D0 /* SSMessageTableViewCellBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMessageTableViewCellBubbleView.h; path = ssmessagesviewcontroller/Classes/SSMessageTableViewCellBubbleView.h; sourceTree = SOURCE_ROOT; };
-		D12D573B1339593700BF53D0 /* SSMessageTableViewCellBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMessageTableViewCellBubbleView.m; path = ssmessagesviewcontroller/Classes/SSMessageTableViewCellBubbleView.m; sourceTree = SOURCE_ROOT; };
-		D12D57401339595100BF53D0 /* SSMessagesViewControllerSendButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SSMessagesViewControllerSendButtonBackground.png; sourceTree = "<group>"; };
-		D12D57411339595100BF53D0 /* SSMessagesViewControllerTextFieldBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SSMessagesViewControllerTextFieldBackground.png; sourceTree = "<group>"; };
-		D12D57481339596800BF53D0 /* SSToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SSToolkit.xcodeproj; path = ssmessagesviewcontroller/Demo/SSToolkit/SSToolkit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		D12D578B1339613500BF53D0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		D12D6202133E35D600BF53D0 /* UPMessageTableViewCellBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMessageTableViewCellBubbleView.h; sourceTree = "<group>"; };
-		D12D6203133E35D600BF53D0 /* UPMessageTableViewCellBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPMessageTableViewCellBubbleView.m; sourceTree = "<group>"; };
-		D12D6206133E361B00BF53D0 /* Balloon_1~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Balloon_1~iphone@2x.png"; path = "images/Balloon_1~iphone@2x.png"; sourceTree = SOURCE_ROOT; };
-		D12D6208133E361B00BF53D0 /* Balloon_2~iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Balloon_2~iphone@2x.png"; path = "images/Balloon_2~iphone@2x.png"; sourceTree = SOURCE_ROOT; };
-		D12D621C133E39A900BF53D0 /* UPMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMessageTableViewCell.h; sourceTree = "<group>"; };
-		D12D621D133E39A900BF53D0 /* UPMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPMessageTableViewCell.m; sourceTree = "<group>"; };
+		D12D6268133E42BA00BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1000px-Universität_Potsdam_logo.svg.png"; path = "images/1000px-Universität_Potsdam_logo.svg.png"; sourceTree = SOURCE_ROOT; };
+		D12D626E133E42F500BF53D0 /* UPMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMessagesViewController.h; sourceTree = "<group>"; };
+		D12D626F133E42F500BF53D0 /* UPMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPMessagesViewController.m; sourceTree = "<group>"; };
+		D12D6274133E441A00BF53D0 /* UPMessagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UPMessagesViewController.xib; path = nibs/UPMessagesViewController.xib; sourceTree = SOURCE_ROOT; };
+		D12D629C133E47BA00BF53D0 /* UPMessageInputField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMessageInputField.h; sourceTree = "<group>"; };
+		D12D629D133E47BA00BF53D0 /* UPMessageInputField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPMessageInputField.m; sourceTree = "<group>"; };
+		D12D6457133E843D00BF53D0 /* Balloon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Balloon_1.png; path = images/Balloon_1.png; sourceTree = SOURCE_ROOT; };
+		D12D6458133E843D00BF53D0 /* Balloon_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Balloon_1@2x.png"; path = "images/Balloon_1@2x.png"; sourceTree = SOURCE_ROOT; };
+		D12D6459133E843D00BF53D0 /* Balloon_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Balloon_2.png; path = images/Balloon_2.png; sourceTree = SOURCE_ROOT; };
+		D12D645A133E843D00BF53D0 /* Balloon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Balloon_2@2x.png"; path = "images/Balloon_2@2x.png"; sourceTree = SOURCE_ROOT; };
+		D12D645B133E843D00BF53D0 /* BalloonInputField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BalloonInputField.png; path = images/BalloonInputField.png; sourceTree = SOURCE_ROOT; };
+		D12D645C133E843D00BF53D0 /* BalloonInputField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BalloonInputField@2x.png"; path = "images/BalloonInputField@2x.png"; sourceTree = SOURCE_ROOT; };
+		D12D645D133E843D00BF53D0 /* input-field-cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "input-field-cover.png"; path = "images/input-field-cover.png"; sourceTree = SOURCE_ROOT; };
+		D12D645E133E843D00BF53D0 /* input-field-cover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "input-field-cover@2x.png"; path = "images/input-field-cover@2x.png"; sourceTree = SOURCE_ROOT; };
+		D12D645F133E843D00BF53D0 /* MessageEntryBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MessageEntryBG.png; path = images/MessageEntryBG.png; sourceTree = SOURCE_ROOT; };
+		D12D6460133E843D00BF53D0 /* MessageEntryBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MessageEntryBG@2x.png"; path = "images/MessageEntryBG@2x.png"; sourceTree = SOURCE_ROOT; };
+		D12D6461133E843D00BF53D0 /* SendButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SendButton.png; path = images/SendButton.png; sourceTree = SOURCE_ROOT; };
+		D12D6462133E843D00BF53D0 /* SendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SendButton@2x.png"; path = "images/SendButton@2x.png"; sourceTree = SOURCE_ROOT; };
+		D12D6463133E843D00BF53D0 /* SendButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SendButtonPressed.png; path = images/SendButtonPressed.png; sourceTree = SOURCE_ROOT; };
+		D12D6464133E843D00BF53D0 /* SendButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SendButtonPressed@2x.png"; path = "images/SendButtonPressed@2x.png"; sourceTree = SOURCE_ROOT; };
 		D18C778E1326F57B003974AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D18C779B1326F635003974AA /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,7 +79,6 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				D18C778F1326F57B003974AA /* QuartzCore.framework in Frameworks */,
-				D12D57861339606900BF53D0 /* libTWToolkit.a in Frameworks */,
 				D12D578C1339613500BF53D0 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,18 +91,11 @@
 			children = (
 				1D3623240D0F684500981E51 /* InstibotAppDelegate.h */,
 				1D3623250D0F684500981E51 /* InstibotAppDelegate.m */,
-				28D7ACF60DDB3853001CB0EB /* InstibotViewController.h */,
-				28D7ACF70DDB3853001CB0EB /* InstibotViewController.m */,
-				D12D57361339593700BF53D0 /* SSMessagesViewController.h */,
-				D12D57371339593700BF53D0 /* SSMessagesViewController.m */,
-				D12D57381339593700BF53D0 /* SSMessageTableViewCell.h */,
-				D12D57391339593700BF53D0 /* SSMessageTableViewCell.m */,
-				D12D573A1339593700BF53D0 /* SSMessageTableViewCellBubbleView.h */,
-				D12D573B1339593700BF53D0 /* SSMessageTableViewCellBubbleView.m */,
-				D12D6202133E35D600BF53D0 /* UPMessageTableViewCellBubbleView.h */,
-				D12D6203133E35D600BF53D0 /* UPMessageTableViewCellBubbleView.m */,
-				D12D621C133E39A900BF53D0 /* UPMessageTableViewCell.h */,
-				D12D621D133E39A900BF53D0 /* UPMessageTableViewCell.m */,
+				D12D626E133E42F500BF53D0 /* UPMessagesViewController.h */,
+				D12D626F133E42F500BF53D0 /* UPMessagesViewController.m */,
+				D12D6274133E441A00BF53D0 /* UPMessagesViewController.xib */,
+				D12D629C133E47BA00BF53D0 /* UPMessageInputField.h */,
+				D12D629D133E47BA00BF53D0 /* UPMessageInputField.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -157,7 +142,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D12D57481339596800BF53D0 /* SSToolkit.xcodeproj */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
@@ -170,21 +154,24 @@
 		D12D573F1339595100BF53D0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D12D6206133E361B00BF53D0 /* Balloon_1~iphone@2x.png */,
-				D12D6208133E361B00BF53D0 /* Balloon_2~iphone@2x.png */,
-				D12D57401339595100BF53D0 /* SSMessagesViewControllerSendButtonBackground.png */,
-				D12D57411339595100BF53D0 /* SSMessagesViewControllerTextFieldBackground.png */,
+				D12D6457133E843D00BF53D0 /* Balloon_1.png */,
+				D12D6458133E843D00BF53D0 /* Balloon_1@2x.png */,
+				D12D6459133E843D00BF53D0 /* Balloon_2.png */,
+				D12D645A133E843D00BF53D0 /* Balloon_2@2x.png */,
+				D12D645B133E843D00BF53D0 /* BalloonInputField.png */,
+				D12D645C133E843D00BF53D0 /* BalloonInputField@2x.png */,
+				D12D645D133E843D00BF53D0 /* input-field-cover.png */,
+				D12D645E133E843D00BF53D0 /* input-field-cover@2x.png */,
+				D12D645F133E843D00BF53D0 /* MessageEntryBG.png */,
+				D12D6460133E843D00BF53D0 /* MessageEntryBG@2x.png */,
+				D12D6461133E843D00BF53D0 /* SendButton.png */,
+				D12D6462133E843D00BF53D0 /* SendButton@2x.png */,
+				D12D6463133E843D00BF53D0 /* SendButtonPressed.png */,
+				D12D6464133E843D00BF53D0 /* SendButtonPressed@2x.png */,
+				D12D6268133E42BA00BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png */,
 			);
 			name = Images;
 			path = ssmessagesviewcontroller/Images;
-			sourceTree = "<group>";
-		};
-		D12D577F1339604C00BF53D0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D12D57831339604C00BF53D0 /* libTWToolkit.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		D18C77991326F635003974AA /* nibs */ = {
@@ -209,7 +196,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D12D57851339606000BF53D0 /* PBXTargetDependency */,
 			);
 			name = instiBot;
 			productName = instiBot;
@@ -233,12 +219,6 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D12D577F1339604C00BF53D0 /* Products */;
-					ProjectRef = D12D57481339596800BF53D0 /* SSToolkit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* instiBot */,
@@ -246,26 +226,28 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		D12D57831339604C00BF53D0 /* libTWToolkit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libTWToolkit.a;
-			remoteRef = D12D57821339604C00BF53D0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D18C779D1326F635003974AA /* MainWindow.xib in Resources */,
-				D12D57441339595100BF53D0 /* SSMessagesViewControllerSendButtonBackground.png in Resources */,
-				D12D57451339595100BF53D0 /* SSMessagesViewControllerTextFieldBackground.png in Resources */,
-				D12D620A133E361B00BF53D0 /* Balloon_1~iphone@2x.png in Resources */,
-				D12D620C133E361B00BF53D0 /* Balloon_2~iphone@2x.png in Resources */,
+				D12D626B133E42BA00BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png in Resources */,
+				D12D6275133E441A00BF53D0 /* UPMessagesViewController.xib in Resources */,
+				D12D6465133E843D00BF53D0 /* Balloon_1.png in Resources */,
+				D12D6466133E843D00BF53D0 /* Balloon_1@2x.png in Resources */,
+				D12D6467133E843D00BF53D0 /* Balloon_2.png in Resources */,
+				D12D6468133E843D00BF53D0 /* Balloon_2@2x.png in Resources */,
+				D12D6469133E843D00BF53D0 /* BalloonInputField.png in Resources */,
+				D12D646A133E843D00BF53D0 /* BalloonInputField@2x.png in Resources */,
+				D12D646B133E843D00BF53D0 /* input-field-cover.png in Resources */,
+				D12D646C133E843D00BF53D0 /* input-field-cover@2x.png in Resources */,
+				D12D646D133E843D00BF53D0 /* MessageEntryBG.png in Resources */,
+				D12D646E133E843D00BF53D0 /* MessageEntryBG@2x.png in Resources */,
+				D12D646F133E843D00BF53D0 /* SendButton.png in Resources */,
+				D12D6470133E843D00BF53D0 /* SendButton@2x.png in Resources */,
+				D12D6471133E843D00BF53D0 /* SendButtonPressed.png in Resources */,
+				D12D6472133E843D00BF53D0 /* SendButtonPressed@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,24 +260,12 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* InstibotAppDelegate.m in Sources */,
-				28D7ACF80DDB3853001CB0EB /* InstibotViewController.m in Sources */,
-				D12D573C1339593700BF53D0 /* SSMessagesViewController.m in Sources */,
-				D12D573D1339593700BF53D0 /* SSMessageTableViewCell.m in Sources */,
-				D12D573E1339593700BF53D0 /* SSMessageTableViewCellBubbleView.m in Sources */,
-				D12D6204133E35D600BF53D0 /* UPMessageTableViewCellBubbleView.m in Sources */,
-				D12D621E133E39A900BF53D0 /* UPMessageTableViewCell.m in Sources */,
+				D12D6271133E42F500BF53D0 /* UPMessagesViewController.m in Sources */,
+				D12D629E133E47BA00BF53D0 /* UPMessageInputField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D12D57851339606000BF53D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SSToolkit;
-			targetProxy = D12D57841339606000BF53D0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
