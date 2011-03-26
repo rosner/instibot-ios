@@ -6,27 +6,34 @@
 //  Copyright 2011 Norman Rosner. All rights reserved.
 //
 
-#import "instiBotAppDelegate.h"
-#import "instiBotViewController.h"
+#import "InstibotAppDelegate.h"
+#import "InstibotViewController.h"
 
-@implementation instiBotAppDelegate
+@interface InstibotAppDelegate ()
+
+@property (nonatomic, retain) InstibotViewController *instibotController;
+
+@end
+
+
+@implementation InstibotAppDelegate
 
 @synthesize window;
-@synthesize viewController;
+
+@synthesize instibotController;
 
 
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+  
+  instibotController = [[InstibotViewController alloc] init];
     
-    // Override point for customization after application launch.
+  [self.window addSubview:instibotController.view];
+  [self.window makeKeyAndVisible];
 
-    // Add the view controller's view to the window and display.
-    [self.window addSubview:viewController.view];
-    [self.window makeKeyAndVisible];
-
-    return YES;
+  return YES;
 }
 
 
@@ -79,9 +86,13 @@
 
 
 - (void)dealloc {
-    [viewController release];
-    [window release];
-    [super dealloc];
+  [instibotController release];
+  instibotController = nil;
+  
+  [window release];
+  window = nil;
+  
+  [super dealloc];
 }
 
 

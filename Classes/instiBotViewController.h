@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SSMessagesViewController.h"
 
-@interface instiBotViewController : UIViewController {
+@interface InstibotViewController : SSMessagesViewController {
 
 }
 

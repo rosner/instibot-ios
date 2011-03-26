@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@class instiBotViewController;
+@class InstibotViewController;
 
-@interface instiBotAppDelegate : NSObject <UIApplicationDelegate> {
+@interface InstibotAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
-    instiBotViewController *viewController;
+  
+    InstibotViewController *instibotController;;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet instiBotViewController *viewController;
 
 @end
 
