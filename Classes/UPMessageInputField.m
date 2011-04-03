@@ -153,7 +153,6 @@ static CGFloat kDefaultTextViewHeight = 37.0;
       }
       
       CGFloat delta = fabsf(newHeight - previousTextViewHeight);
-      NSLog(@"delta %f", delta);
       if (delta > 0.0) {
         if (newHeight >= previousTextViewHeight) {
           [delegate messageInputField:self shouldGrowWithDelta:delta];
