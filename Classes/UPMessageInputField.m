@@ -77,6 +77,13 @@ static CGFloat kDefaultTextViewHeight = 37.0;
     firstTimeLayout = NO;
     previousTextViewHeight = kDefaultTextViewHeight; // this is hacky! It's the initial content size height of the text view after the 
     //first letter is typed
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyBoardNotification:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyBoardNotification:) name:UIKeyboardDidShowNotification object:nil];  
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyBoardNotification:) name:UIKeyboardWillHideNotification object:nil];    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyBoardNotification:) name:UIKeyboardDidHideNotification object:nil];    
+    
+    numberOfLines = 1;
   }
   return self;
 }
@@ -126,12 +133,14 @@ static CGFloat kDefaultTextViewHeight = 37.0;
   [delegate release];
   delegate = nil;
   
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+  
   [super dealloc];
 }
 
 - (void)textViewDidChange:(UITextView *)_textView {
   CGSize textSize = [_textView.text sizeWithFont:_textView.font constrainedToSize:_textView.contentSize];
-  NSUInteger numberOfLines = textSize.height / _textView.font.lineHeight;
+  numberOfLines = textSize.height / _textView.font.lineHeight;
   
   if (numberOfLines < 5) {
     
@@ -161,4 +170,15 @@ static CGFloat kDefaultTextViewHeight = 37.0;
   }
 }
 
+
+- (void)handleKeyBoardNotification:(NSNotification *)notification {
+  if(textView.text.length == 0) {
+//    NSLog(@"key content size %f %f", textView.contentSize.width, textView.contentSize.height);
+//    NSLog(@" content frame %f %f %f %f", textView.frame.origin.x, textView.frame.origin.y, textView.frame.size.width, textView.frame.size.height);    
+		textView.contentSize = CGSizeMake(textView.contentSize.width, kDefaultTextViewHeight);
+    textView.contentOffset = CGPointZero;
+    textView.scrollEnabled = NO;
+    textView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+  }
+}
 @end

@@ -24,6 +24,8 @@
   id<UPMessageInputFieldDelegate> delegate;
   
   CGFloat previousTextViewHeight;
+  
+  NSUInteger numberOfLines;
 }
 
 @property (nonatomic, retain) IBOutlet id<UPMessageInputFieldDelegate> delegate;
