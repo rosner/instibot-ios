@@ -15,6 +15,7 @@
 
 - (void)tearDown;
 
+- (void)adaptSizeForSubviews:(CGFloat )delta;
 @end
 
 @implementation UPMessagesViewController
@@ -131,17 +132,43 @@
 
 
 - (void)messageInputField:(UPMessageInputField *)_messageInputField shouldGrowWithDelta:(CGFloat )delta {
-  CGRect newFrame = _messageInputField.frame;
-  newFrame.origin.y -= delta;
-  newFrame.size.height += delta;
-  _messageInputField.frame = newFrame;
-  
-  [self.view setNeedsLayout];
-  
+//  CGRect newMessageInputFieldFrame = _messageInputField.frame;
+//  newMessageInputFieldFrame.origin.y -= delta;
+//  newMessageInputFieldFrame.size.height += delta;
+//  _messageInputField.frame = newMessageInputFieldFrame;
+//  
+//  CGRect newTableViewFrame = tableView.frame;
+//  newTableViewFrame.size.height -= delta;
+//  tableView.frame = newTableViewFrame;
+//  
+//  [self.view setNeedsLayout];
+  [self adaptSizeForSubviews:delta];
 }
 
 - (void)messageInputField:(UPMessageInputField *)_messageInputField shouldShrinkWithDelta:(CGFloat )delta {
+  CGRect newMessageInputFieldFrame = messageInputField.frame;
+  newMessageInputFieldFrame.origin.y += delta;
+  newMessageInputFieldFrame.size.height -= delta;
+	messageInputField.frame = newMessageInputFieldFrame;
   
+  CGRect newTableViewFrame = tableView.frame;
+  newTableViewFrame.size.height += delta;
+  tableView.frame = newTableViewFrame;
+  [self.view setNeedsLayout];
+//  [self adaptSizeForSubviews:-delta];
+}
+
+- (void)adaptSizeForSubviews:(CGFloat )delta {
+  CGRect newMessageInputFieldFrame = messageInputField.frame;
+  newMessageInputFieldFrame.origin.y -= delta;
+  newMessageInputFieldFrame.size.height += delta;
+  messageInputField.frame = newMessageInputFieldFrame;
+  
+  CGRect newTableViewFrame = tableView.frame;
+  newTableViewFrame.size.height -= delta;
+  tableView.frame = newTableViewFrame;
+  
+  [self.view setNeedsLayout];
 }
 
 @end

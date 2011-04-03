@@ -16,6 +16,8 @@ static CGFloat kVerticalPadding = 5.0;
 
 static CGFloat kHorizontalPadding = 6.5;
 
+static CGFloat kDefaultTextViewHeight = 37.0;
+
 @implementation UPMessageInputField
 
 @synthesize delegate;
@@ -29,14 +31,14 @@ static CGFloat kHorizontalPadding = 6.5;
     backgroundImageView.image = stretchableBackgroundImage;
     backgroundImageView.tag = 501;
     backgroundImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight |
-    	UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | 
-    	UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
+    UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | 
+    UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
     [self addSubview:backgroundImageView];
     [backgroundImageView release];
     
     textView = [[UITextView alloc] initWithFrame:CGRectZero];    
     textView.font = [UIFont systemFontOfSize:[UIFont labelFontSize]];
-    textView.scrollEnabled = YES;
+    textView.scrollEnabled = NO;
     textView.scrollsToTop = NO;
     textView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     textView.contentOffset = CGPointZero;
@@ -73,7 +75,7 @@ static CGFloat kHorizontalPadding = 6.5;
     
     [self addSubview:textViewCover];
     firstTimeLayout = NO;
-    previousTextViewHeight = 37.0; // this is hacky! It's the initial content size height of the text view after the 
+    previousTextViewHeight = kDefaultTextViewHeight; // this is hacky! It's the initial content size height of the text view after the 
     //first letter is typed
   }
   return self;
@@ -87,20 +89,20 @@ static CGFloat kHorizontalPadding = 6.5;
   if (!firstTimeLayout) {
     
     textView.contentOffset = CGPointZero;
-
+    
     firstTimeLayout = YES;
   } else {
 		textFieldFrame.size.height = self.frame.size.height - 2.0;
   }
-
+  
   coverFrame = textFieldFrame;
   coverFrame.origin.y = 0.0;
   coverFrame.size.height = self.frame.size.height;
   
-  NSLog(@"content size %f %f", textView.contentSize.width, textView.contentSize.height);
-//  NSLog(@"textview frame size %f %f", textView.frame.size.width, textView.frame.size.height);
-//  NSLog(@"frame size %f %f", self.frame.size.width, self.frame.size.height);  
-
+  //  NSLog(@"content size %f %f", textView.contentSize.width, textView.contentSize.height);
+  //  NSLog(@"textview frame size %f %f", textView.frame.size.width, textView.frame.size.height);
+  //  NSLog(@"frame size %f %f", self.frame.size.width, self.frame.size.height);  
+  
   textView.frame = textFieldFrame;
   textViewCover.frame = coverFrame;
   
@@ -109,7 +111,6 @@ static CGFloat kHorizontalPadding = 6.5;
   CGRect sendButtonFrame = CGRectMake(xOffset, yOffset, widthFactor * 1.0, kButtonHeight);
   
   sendButton.frame = sendButtonFrame;
-  
 }
 
 - (void)dealloc {
@@ -129,18 +130,34 @@ static CGFloat kHorizontalPadding = 6.5;
 }
 
 - (void)textViewDidChange:(UITextView *)_textView {
-  NSLog(@"changed content size %f %f", _textView.contentSize.width, _textView.contentSize.height);  
-  // check if there's a delegate
-	if (delegate && [delegate conformsToProtocol:@protocol(UPMessageInputFieldDelegate)]) {
-   	CGFloat newHeight = _textView.contentSize.height;
-    CGFloat delta = fabsf(newHeight - previousTextViewHeight);
-    NSLog(@"delta %f", delta);
-    if (newHeight >= previousTextViewHeight) {
-      [delegate messageInputField:self shouldGrowWithDelta:delta];
-    } else {
-      [delegate messageInputField:self shouldShrinkWithDelta:delta];
+  CGSize textSize = [_textView.text sizeWithFont:_textView.font constrainedToSize:_textView.contentSize];
+  NSUInteger numberOfLines = textSize.height / _textView.font.lineHeight;
+  
+  if (numberOfLines < 5) {
+    
+    // check if there's a delegate
+    if (delegate && [delegate conformsToProtocol:@protocol(UPMessageInputFieldDelegate)]) {
+      CGFloat newHeight = _textView.contentSize.height;
+      
+      if ([_textView.text length] == 0) {
+        newHeight = kDefaultTextViewHeight;
+      }
+      
+      CGFloat delta = fabsf(newHeight - previousTextViewHeight);
+      NSLog(@"delta %f", delta);
+      if (delta > 0.0) {
+        if (newHeight >= previousTextViewHeight) {
+          [delegate messageInputField:self shouldGrowWithDelta:delta];
+        } else {
+          [delegate messageInputField:self shouldShrinkWithDelta:delta];
+        }
+      }
+      previousTextViewHeight = newHeight;
     }
-    previousTextViewHeight = newHeight;
+    
+    _textView.scrollEnabled = NO;
+  } else {
+    _textView.scrollEnabled = YES;
   }
 }
 
