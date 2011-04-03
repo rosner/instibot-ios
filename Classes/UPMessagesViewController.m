@@ -9,6 +9,7 @@
 #import "UPMessagesViewController.h"
 
 #import "UPMessageInputField.h"
+#import "UPMessageInputFieldDelegate.h"
 
 @interface UPMessagesViewController ()
 
@@ -125,6 +126,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return 10;
+  
+}
+
+
+- (void)messageInputField:(UPMessageInputField *)_messageInputField shouldGrowWithDelta:(CGFloat )delta {
+  CGRect newFrame = _messageInputField.frame;
+  newFrame.origin.y -= delta;
+  newFrame.size.height += delta;
+  _messageInputField.frame = newFrame;
+  
+  [self.view setNeedsLayout];
+  
+}
+
+- (void)messageInputField:(UPMessageInputField *)_messageInputField shouldShrinkWithDelta:(CGFloat )delta {
   
 }
 

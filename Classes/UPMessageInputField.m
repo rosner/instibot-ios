@@ -7,32 +7,52 @@
 //
 
 #import "UPMessageInputField.h"
-
+#import "UPMessageInputFieldDelegate.h"
 
 static CGFloat kButtonHeight = 27.0;
 
 // (40 - 27) / 2; normal height - height of button
-static CGFloat kVerticalPadding = 8.0;
+static CGFloat kVerticalPadding = 5.0;
 
 static CGFloat kHorizontalPadding = 6.5;
 
 @implementation UPMessageInputField
 
+@synthesize delegate;
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
 	self = [super initWithCoder:aDecoder];
   if (self) {
-    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"MessageEntryBG.png"]];
+    UIImage *backgroundImage = [UIImage imageNamed:@"MessageEntryBG.png"];
+    UIImage *stretchableBackgroundImage = [backgroundImage stretchableImageWithLeftCapWidth:4 topCapHeight:20];
+		UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    backgroundImageView.image = stretchableBackgroundImage;
+    backgroundImageView.tag = 501;
+    backgroundImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight |
+    	UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | 
+    	UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
+    [self addSubview:backgroundImageView];
+    [backgroundImageView release];
     
-    textField = [[UITextField alloc] initWithFrame:CGRectZero];
-    UIImage *balloonInputImage = [UIImage imageNamed:@"BalloonInputField.png"];
-		textField.background = [balloonInputImage stretchableImageWithLeftCapWidth:13 topCapHeight:0];
+    textView = [[UITextView alloc] initWithFrame:CGRectZero];    
+    textView.font = [UIFont systemFontOfSize:[UIFont labelFontSize]];
+    textView.scrollEnabled = YES;
+    textView.scrollsToTop = NO;
+    textView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    textView.contentOffset = CGPointZero;
+    textView.scrollIndicatorInsets = UIEdgeInsetsMake(10.0, 0.0, 10.0, 8.0);
+    textView.autocorrectionType = UITextAutocorrectionTypeNo;
+    textView.autocapitalizationType = UITextAutocapitalizationTypeNone;
     
-    [self addSubview:textField];
+    textView.delegate = self;
+    
+    [self addSubview:textView];
     
     sendButton = [[UIButton alloc] initWithFrame:CGRectZero];
     [sendButton setTitle: NSLocalizedString(@"Send", @"Send the current message") forState:UIControlStateNormal];
     sendButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont buttonFontSize]];
     sendButton.titleLabel.textColor = [UIColor whiteColor];
+    sendButton.backgroundColor = [UIColor clearColor];
     
     UIImage *normalStateImage = [UIImage imageNamed:@"SendButton.png"];
     UIImage *stretchableNormalStateImage = [normalStateImage stretchableImageWithLeftCapWidth:13 topCapHeight:0];
@@ -41,46 +61,87 @@ static CGFloat kHorizontalPadding = 6.5;
     UIImage *pressedStateImage = [UIImage imageNamed:@"SendButtonPressed.png"];
     UIImage *stretchablePressedStateImage = [pressedStateImage stretchableImageWithLeftCapWidth:13 topCapHeight:0];
     [sendButton setBackgroundImage:stretchablePressedStateImage forState:UIControlStateSelected];
-
+    
     [self addSubview:sendButton];
     
     UIImage *coverImage = [UIImage imageNamed:@"input-field-cover.png"];
-    UIImage *stretchableCoverImage = [coverImage stretchableImageWithLeftCapWidth:13 topCapHeight:0];
+    UIImage *stretchableCoverImage = [coverImage stretchableImageWithLeftCapWidth:13 topCapHeight:20];
     
-    textFieldCover = [[UIImageView alloc] initWithFrame:CGRectZero];
+    textViewCover = [[UIImageView alloc] initWithFrame:CGRectZero];
     
-    textFieldCover.image = stretchableCoverImage;
+    textViewCover.image = stretchableCoverImage;
     
-    [self addSubview:textFieldCover];
+    [self addSubview:textViewCover];
+    firstTimeLayout = NO;
+    previousTextViewHeight = 37.0; // this is hacky! It's the initial content size height of the text view after the 
+    //first letter is typed
   }
   return self;
 }
 
 - (void)layoutSubviews {
-  CGFloat widthFactor = (self.frame.size.width - kHorizontalPadding - kHorizontalPadding) / 5.0;
-  CGRect textFieldFrame = CGRectMake(kHorizontalPadding, 0.0, widthFactor * 4.0, 40.0);
-	textField.frame = textFieldFrame;
-  textFieldCover.frame = textFieldFrame;
+  [[self viewWithTag:501] setFrame:self.bounds];
+  CGFloat widthFactor = (self.frame.size.width - kHorizontalPadding - kHorizontalPadding) / 5.0;  
+  CGRect textFieldFrame = CGRectMake(8.0, 2.0, widthFactor * 4.0 , 38.0);
+  CGRect coverFrame;
+  if (!firstTimeLayout) {
+    
+    textView.contentOffset = CGPointZero;
+
+    firstTimeLayout = YES;
+  } else {
+		textFieldFrame.size.height = self.frame.size.height - 2.0;
+  }
+
+  coverFrame = textFieldFrame;
+  coverFrame.origin.y = 0.0;
+  coverFrame.size.height = self.frame.size.height;
+  
+  NSLog(@"content size %f %f", textView.contentSize.width, textView.contentSize.height);
+//  NSLog(@"textview frame size %f %f", textView.frame.size.width, textView.frame.size.height);
+//  NSLog(@"frame size %f %f", self.frame.size.width, self.frame.size.height);  
+
+  textView.frame = textFieldFrame;
+  textViewCover.frame = coverFrame;
   
   CGFloat xOffset = CGRectGetMaxX(textFieldFrame);
-  CGRect sendButtonFrame = CGRectMake(xOffset, kVerticalPadding, widthFactor * 1.0, kButtonHeight);
-
+  CGFloat yOffset = CGRectGetMaxY(self.bounds) - kVerticalPadding - kButtonHeight;
+  CGRect sendButtonFrame = CGRectMake(xOffset, yOffset, widthFactor * 1.0, kButtonHeight);
+  
   sendButton.frame = sendButtonFrame;
-
+  
 }
 
 - (void)dealloc {
   [sendButton release];
   sendButton = nil;
   
-  [textField release];
-  textField = nil;
+  [textView release];
+  textView = nil;
   
-  [textFieldCover release];
-  textFieldCover = nil;
+  [textViewCover release];
+  textViewCover = nil;
+  
+  [delegate release];
+  delegate = nil;
   
   [super dealloc];
 }
 
+- (void)textViewDidChange:(UITextView *)_textView {
+  NSLog(@"changed content size %f %f", _textView.contentSize.width, _textView.contentSize.height);  
+  // check if there's a delegate
+	if (delegate && [delegate conformsToProtocol:@protocol(UPMessageInputFieldDelegate)]) {
+   	CGFloat newHeight = _textView.contentSize.height;
+    CGFloat delta = fabsf(newHeight - previousTextViewHeight);
+    NSLog(@"delta %f", delta);
+    if (newHeight >= previousTextViewHeight) {
+      [delegate messageInputField:self shouldGrowWithDelta:delta];
+    } else {
+      [delegate messageInputField:self shouldShrinkWithDelta:delta];
+    }
+    previousTextViewHeight = newHeight;
+  }
+}
 
 @end

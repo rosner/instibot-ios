@@ -8,15 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol UPMessageInputFieldDelegate;
 
-@interface UPMessageInputField : UIView {
+@interface UPMessageInputField : UIView <UITextViewDelegate> {
 	
   @private 
   UIButton *sendButton;
   
-  UITextField *textField;
+  UITextView *textView;
   
-  UIImageView *textFieldCover;
+  UIImageView *textViewCover;
+  
+  BOOL firstTimeLayout;
+  
+  id<UPMessageInputFieldDelegate> delegate;
+  
+  CGFloat previousTextViewHeight;
 }
 
+@property (nonatomic, retain) IBOutlet id<UPMessageInputFieldDelegate> delegate;
+
 @end
+

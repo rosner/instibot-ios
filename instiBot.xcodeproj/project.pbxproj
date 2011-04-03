@@ -13,24 +13,24 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		D12D578C1339613500BF53D0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D12D578B1339613500BF53D0 /* Security.framework */; };
-		D12D626B133E42BA00BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6268133E42BA00BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png */; };
 		D12D6271133E42F500BF53D0 /* UPMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12D626F133E42F500BF53D0 /* UPMessagesViewController.m */; };
 		D12D6275133E441A00BF53D0 /* UPMessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12D6274133E441A00BF53D0 /* UPMessagesViewController.xib */; };
 		D12D629E133E47BA00BF53D0 /* UPMessageInputField.m in Sources */ = {isa = PBXBuildFile; fileRef = D12D629D133E47BA00BF53D0 /* UPMessageInputField.m */; };
-		D12D6465133E843D00BF53D0 /* Balloon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6457133E843D00BF53D0 /* Balloon_1.png */; };
-		D12D6466133E843D00BF53D0 /* Balloon_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6458133E843D00BF53D0 /* Balloon_1@2x.png */; };
-		D12D6467133E843D00BF53D0 /* Balloon_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6459133E843D00BF53D0 /* Balloon_2.png */; };
-		D12D6468133E843D00BF53D0 /* Balloon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D645A133E843D00BF53D0 /* Balloon_2@2x.png */; };
-		D12D6469133E843D00BF53D0 /* BalloonInputField.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D645B133E843D00BF53D0 /* BalloonInputField.png */; };
-		D12D646A133E843D00BF53D0 /* BalloonInputField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D645C133E843D00BF53D0 /* BalloonInputField@2x.png */; };
-		D12D646B133E843D00BF53D0 /* input-field-cover.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D645D133E843D00BF53D0 /* input-field-cover.png */; };
-		D12D646C133E843D00BF53D0 /* input-field-cover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D645E133E843D00BF53D0 /* input-field-cover@2x.png */; };
-		D12D646D133E843D00BF53D0 /* MessageEntryBG.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D645F133E843D00BF53D0 /* MessageEntryBG.png */; };
-		D12D646E133E843D00BF53D0 /* MessageEntryBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6460133E843D00BF53D0 /* MessageEntryBG@2x.png */; };
-		D12D646F133E843D00BF53D0 /* SendButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6461133E843D00BF53D0 /* SendButton.png */; };
-		D12D6470133E843D00BF53D0 /* SendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6462133E843D00BF53D0 /* SendButton@2x.png */; };
-		D12D6471133E843D00BF53D0 /* SendButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6463133E843D00BF53D0 /* SendButtonPressed.png */; };
-		D12D6472133E843D00BF53D0 /* SendButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6464133E843D00BF53D0 /* SendButtonPressed@2x.png */; };
+		D12D6544133EAA3800BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6535133EAA3800BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png */; };
+		D12D6545133EAA3800BF53D0 /* Balloon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6536133EAA3800BF53D0 /* Balloon_1.png */; };
+		D12D6546133EAA3800BF53D0 /* Balloon_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6537133EAA3800BF53D0 /* Balloon_1@2x.png */; };
+		D12D6547133EAA3800BF53D0 /* Balloon_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6538133EAA3800BF53D0 /* Balloon_2.png */; };
+		D12D6548133EAA3800BF53D0 /* Balloon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6539133EAA3800BF53D0 /* Balloon_2@2x.png */; };
+		D12D6549133EAA3800BF53D0 /* BalloonInputField.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D653A133EAA3800BF53D0 /* BalloonInputField.png */; };
+		D12D654A133EAA3800BF53D0 /* BalloonInputField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D653B133EAA3800BF53D0 /* BalloonInputField@2x.png */; };
+		D12D654B133EAA3800BF53D0 /* input-field-cover.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D653C133EAA3800BF53D0 /* input-field-cover.png */; };
+		D12D654C133EAA3800BF53D0 /* input-field-cover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D653D133EAA3800BF53D0 /* input-field-cover@2x.png */; };
+		D12D654D133EAA3800BF53D0 /* MessageEntryBG.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D653E133EAA3800BF53D0 /* MessageEntryBG.png */; };
+		D12D654E133EAA3800BF53D0 /* MessageEntryBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D653F133EAA3800BF53D0 /* MessageEntryBG@2x.png */; };
+		D12D654F133EAA3800BF53D0 /* SendButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6540133EAA3800BF53D0 /* SendButton.png */; };
+		D12D6550133EAA3800BF53D0 /* SendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6541133EAA3800BF53D0 /* SendButton@2x.png */; };
+		D12D6551133EAA3800BF53D0 /* SendButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6542133EAA3800BF53D0 /* SendButtonPressed.png */; };
+		D12D6552133EAA3800BF53D0 /* SendButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6543133EAA3800BF53D0 /* SendButtonPressed@2x.png */; };
 		D18C778F1326F57B003974AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18C778E1326F57B003974AA /* QuartzCore.framework */; };
 		D18C779D1326F635003974AA /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D18C779B1326F635003974AA /* MainWindow.xib */; };
 /* End PBXBuildFile section */
@@ -46,28 +46,29 @@
 		32CA4F630368D1EE00C91783 /* instiBot_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = instiBot_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* instiBot-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "instiBot-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		D12D578B1339613500BF53D0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		D12D6268133E42BA00BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1000px-Universität_Potsdam_logo.svg.png"; path = "images/1000px-Universität_Potsdam_logo.svg.png"; sourceTree = SOURCE_ROOT; };
 		D12D626E133E42F500BF53D0 /* UPMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMessagesViewController.h; sourceTree = "<group>"; };
 		D12D626F133E42F500BF53D0 /* UPMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPMessagesViewController.m; sourceTree = "<group>"; };
 		D12D6274133E441A00BF53D0 /* UPMessagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UPMessagesViewController.xib; path = nibs/UPMessagesViewController.xib; sourceTree = SOURCE_ROOT; };
 		D12D629C133E47BA00BF53D0 /* UPMessageInputField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMessageInputField.h; sourceTree = "<group>"; };
 		D12D629D133E47BA00BF53D0 /* UPMessageInputField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPMessageInputField.m; sourceTree = "<group>"; };
-		D12D6457133E843D00BF53D0 /* Balloon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Balloon_1.png; path = images/Balloon_1.png; sourceTree = SOURCE_ROOT; };
-		D12D6458133E843D00BF53D0 /* Balloon_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Balloon_1@2x.png"; path = "images/Balloon_1@2x.png"; sourceTree = SOURCE_ROOT; };
-		D12D6459133E843D00BF53D0 /* Balloon_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Balloon_2.png; path = images/Balloon_2.png; sourceTree = SOURCE_ROOT; };
-		D12D645A133E843D00BF53D0 /* Balloon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Balloon_2@2x.png"; path = "images/Balloon_2@2x.png"; sourceTree = SOURCE_ROOT; };
-		D12D645B133E843D00BF53D0 /* BalloonInputField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BalloonInputField.png; path = images/BalloonInputField.png; sourceTree = SOURCE_ROOT; };
-		D12D645C133E843D00BF53D0 /* BalloonInputField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BalloonInputField@2x.png"; path = "images/BalloonInputField@2x.png"; sourceTree = SOURCE_ROOT; };
-		D12D645D133E843D00BF53D0 /* input-field-cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "input-field-cover.png"; path = "images/input-field-cover.png"; sourceTree = SOURCE_ROOT; };
-		D12D645E133E843D00BF53D0 /* input-field-cover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "input-field-cover@2x.png"; path = "images/input-field-cover@2x.png"; sourceTree = SOURCE_ROOT; };
-		D12D645F133E843D00BF53D0 /* MessageEntryBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MessageEntryBG.png; path = images/MessageEntryBG.png; sourceTree = SOURCE_ROOT; };
-		D12D6460133E843D00BF53D0 /* MessageEntryBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MessageEntryBG@2x.png"; path = "images/MessageEntryBG@2x.png"; sourceTree = SOURCE_ROOT; };
-		D12D6461133E843D00BF53D0 /* SendButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SendButton.png; path = images/SendButton.png; sourceTree = SOURCE_ROOT; };
-		D12D6462133E843D00BF53D0 /* SendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SendButton@2x.png"; path = "images/SendButton@2x.png"; sourceTree = SOURCE_ROOT; };
-		D12D6463133E843D00BF53D0 /* SendButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SendButtonPressed.png; path = images/SendButtonPressed.png; sourceTree = SOURCE_ROOT; };
-		D12D6464133E843D00BF53D0 /* SendButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SendButtonPressed@2x.png"; path = "images/SendButtonPressed@2x.png"; sourceTree = SOURCE_ROOT; };
+		D12D6535133EAA3800BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1000px-Universität_Potsdam_logo.svg.png"; sourceTree = "<group>"; };
+		D12D6536133EAA3800BF53D0 /* Balloon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Balloon_1.png; sourceTree = "<group>"; };
+		D12D6537133EAA3800BF53D0 /* Balloon_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Balloon_1@2x.png"; sourceTree = "<group>"; };
+		D12D6538133EAA3800BF53D0 /* Balloon_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Balloon_2.png; sourceTree = "<group>"; };
+		D12D6539133EAA3800BF53D0 /* Balloon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Balloon_2@2x.png"; sourceTree = "<group>"; };
+		D12D653A133EAA3800BF53D0 /* BalloonInputField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BalloonInputField.png; sourceTree = "<group>"; };
+		D12D653B133EAA3800BF53D0 /* BalloonInputField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BalloonInputField@2x.png"; sourceTree = "<group>"; };
+		D12D653C133EAA3800BF53D0 /* input-field-cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input-field-cover.png"; sourceTree = "<group>"; };
+		D12D653D133EAA3800BF53D0 /* input-field-cover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input-field-cover@2x.png"; sourceTree = "<group>"; };
+		D12D653E133EAA3800BF53D0 /* MessageEntryBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntryBG.png; sourceTree = "<group>"; };
+		D12D653F133EAA3800BF53D0 /* MessageEntryBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntryBG@2x.png"; sourceTree = "<group>"; };
+		D12D6540133EAA3800BF53D0 /* SendButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SendButton.png; sourceTree = "<group>"; };
+		D12D6541133EAA3800BF53D0 /* SendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendButton@2x.png"; sourceTree = "<group>"; };
+		D12D6542133EAA3800BF53D0 /* SendButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SendButtonPressed.png; sourceTree = "<group>"; };
+		D12D6543133EAA3800BF53D0 /* SendButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendButtonPressed@2x.png"; sourceTree = "<group>"; };
 		D18C778E1326F57B003974AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D18C779B1326F635003974AA /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		D1BE64C91348BFA200B448CA /* UPMessageInputFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMessageInputFieldDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 				D12D6274133E441A00BF53D0 /* UPMessagesViewController.xib */,
 				D12D629C133E47BA00BF53D0 /* UPMessageInputField.h */,
 				D12D629D133E47BA00BF53D0 /* UPMessageInputField.m */,
+				D1BE64C91348BFA200B448CA /* UPMessageInputFieldDelegate.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -132,7 +134,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D12D573F1339595100BF53D0 /* Images */,
+				D12D6534133EAA3800BF53D0 /* images */,
 				D18C77991326F635003974AA /* nibs */,
 				8D1107310486CEB800E47090 /* instiBot-Info.plist */,
 			);
@@ -151,27 +153,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D12D573F1339595100BF53D0 /* Images */ = {
+		D12D6534133EAA3800BF53D0 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				D12D6457133E843D00BF53D0 /* Balloon_1.png */,
-				D12D6458133E843D00BF53D0 /* Balloon_1@2x.png */,
-				D12D6459133E843D00BF53D0 /* Balloon_2.png */,
-				D12D645A133E843D00BF53D0 /* Balloon_2@2x.png */,
-				D12D645B133E843D00BF53D0 /* BalloonInputField.png */,
-				D12D645C133E843D00BF53D0 /* BalloonInputField@2x.png */,
-				D12D645D133E843D00BF53D0 /* input-field-cover.png */,
-				D12D645E133E843D00BF53D0 /* input-field-cover@2x.png */,
-				D12D645F133E843D00BF53D0 /* MessageEntryBG.png */,
-				D12D6460133E843D00BF53D0 /* MessageEntryBG@2x.png */,
-				D12D6461133E843D00BF53D0 /* SendButton.png */,
-				D12D6462133E843D00BF53D0 /* SendButton@2x.png */,
-				D12D6463133E843D00BF53D0 /* SendButtonPressed.png */,
-				D12D6464133E843D00BF53D0 /* SendButtonPressed@2x.png */,
-				D12D6268133E42BA00BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png */,
+				D12D6535133EAA3800BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png */,
+				D12D6536133EAA3800BF53D0 /* Balloon_1.png */,
+				D12D6537133EAA3800BF53D0 /* Balloon_1@2x.png */,
+				D12D6538133EAA3800BF53D0 /* Balloon_2.png */,
+				D12D6539133EAA3800BF53D0 /* Balloon_2@2x.png */,
+				D12D653A133EAA3800BF53D0 /* BalloonInputField.png */,
+				D12D653B133EAA3800BF53D0 /* BalloonInputField@2x.png */,
+				D12D653C133EAA3800BF53D0 /* input-field-cover.png */,
+				D12D653D133EAA3800BF53D0 /* input-field-cover@2x.png */,
+				D12D653E133EAA3800BF53D0 /* MessageEntryBG.png */,
+				D12D653F133EAA3800BF53D0 /* MessageEntryBG@2x.png */,
+				D12D6540133EAA3800BF53D0 /* SendButton.png */,
+				D12D6541133EAA3800BF53D0 /* SendButton@2x.png */,
+				D12D6542133EAA3800BF53D0 /* SendButtonPressed.png */,
+				D12D6543133EAA3800BF53D0 /* SendButtonPressed@2x.png */,
 			);
-			name = Images;
-			path = ssmessagesviewcontroller/Images;
+			path = images;
 			sourceTree = "<group>";
 		};
 		D18C77991326F635003974AA /* nibs */ = {
@@ -232,22 +233,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18C779D1326F635003974AA /* MainWindow.xib in Resources */,
-				D12D626B133E42BA00BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png in Resources */,
 				D12D6275133E441A00BF53D0 /* UPMessagesViewController.xib in Resources */,
-				D12D6465133E843D00BF53D0 /* Balloon_1.png in Resources */,
-				D12D6466133E843D00BF53D0 /* Balloon_1@2x.png in Resources */,
-				D12D6467133E843D00BF53D0 /* Balloon_2.png in Resources */,
-				D12D6468133E843D00BF53D0 /* Balloon_2@2x.png in Resources */,
-				D12D6469133E843D00BF53D0 /* BalloonInputField.png in Resources */,
-				D12D646A133E843D00BF53D0 /* BalloonInputField@2x.png in Resources */,
-				D12D646B133E843D00BF53D0 /* input-field-cover.png in Resources */,
-				D12D646C133E843D00BF53D0 /* input-field-cover@2x.png in Resources */,
-				D12D646D133E843D00BF53D0 /* MessageEntryBG.png in Resources */,
-				D12D646E133E843D00BF53D0 /* MessageEntryBG@2x.png in Resources */,
-				D12D646F133E843D00BF53D0 /* SendButton.png in Resources */,
-				D12D6470133E843D00BF53D0 /* SendButton@2x.png in Resources */,
-				D12D6471133E843D00BF53D0 /* SendButtonPressed.png in Resources */,
-				D12D6472133E843D00BF53D0 /* SendButtonPressed@2x.png in Resources */,
+				D12D6544133EAA3800BF53D0 /* 1000px-Universität_Potsdam_logo.svg.png in Resources */,
+				D12D6545133EAA3800BF53D0 /* Balloon_1.png in Resources */,
+				D12D6546133EAA3800BF53D0 /* Balloon_1@2x.png in Resources */,
+				D12D6547133EAA3800BF53D0 /* Balloon_2.png in Resources */,
+				D12D6548133EAA3800BF53D0 /* Balloon_2@2x.png in Resources */,
+				D12D6549133EAA3800BF53D0 /* BalloonInputField.png in Resources */,
+				D12D654A133EAA3800BF53D0 /* BalloonInputField@2x.png in Resources */,
+				D12D654B133EAA3800BF53D0 /* input-field-cover.png in Resources */,
+				D12D654C133EAA3800BF53D0 /* input-field-cover@2x.png in Resources */,
+				D12D654D133EAA3800BF53D0 /* MessageEntryBG.png in Resources */,
+				D12D654E133EAA3800BF53D0 /* MessageEntryBG@2x.png in Resources */,
+				D12D654F133EAA3800BF53D0 /* SendButton.png in Resources */,
+				D12D6550133EAA3800BF53D0 /* SendButton@2x.png in Resources */,
+				D12D6551133EAA3800BF53D0 /* SendButtonPressed.png in Resources */,
+				D12D6552133EAA3800BF53D0 /* SendButtonPressed@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

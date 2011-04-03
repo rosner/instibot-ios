@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UPMessageInputFieldDelegate.h"
 
 @class UPMessageInputField;
+@protocol UPMessageInputFieldDelegate;
 
-@interface UPMessagesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface UPMessagesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UPMessageInputFieldDelegate> {
 
   @private 
   UITableView *tableView;
