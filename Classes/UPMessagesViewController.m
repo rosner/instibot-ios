@@ -11,6 +11,9 @@
 #import "UPMessageInputField.h"
 #import "UPMessageInputFieldDelegate.h"
 
+#import "UPApiAdapter.h"
+#import "UPApiAdapterDelegate.h"
+
 #import "UPMessageTableViewCell.h"
 
 static NSString *UPBotKey = @"B";

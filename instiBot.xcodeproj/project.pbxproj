@@ -31,10 +31,28 @@
 		D12D6550133EAA3800BF53D0 /* SendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6541133EAA3800BF53D0 /* SendButton@2x.png */; };
 		D12D6551133EAA3800BF53D0 /* SendButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6542133EAA3800BF53D0 /* SendButtonPressed.png */; };
 		D12D6552133EAA3800BF53D0 /* SendButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6543133EAA3800BF53D0 /* SendButtonPressed@2x.png */; };
+		D15753AB134A6FCC00C861FC /* UPApiAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = D15753AA134A6FCC00C861FC /* UPApiAdapter.m */; };
 		D18C778F1326F57B003974AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18C778E1326F57B003974AA /* QuartzCore.framework */; };
 		D18C779D1326F635003974AA /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D18C779B1326F635003974AA /* MainWindow.xib */; };
 		D1BE672D1349229100B448CA /* UPMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE672C1349229100B448CA /* UPMessageTableViewCell.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D1575395134A6C8C00C861FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D157538C134A6C8C00C861FC /* Seriously.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libSeriously.a */;
+			remoteInfo = Seriously;
+		};
+		D15753A3134A6CA600C861FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D157538C134A6C8C00C861FC /* Seriously.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D /* Seriously */;
+			remoteInfo = Seriously;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,6 +85,10 @@
 		D12D6541133EAA3800BF53D0 /* SendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendButton@2x.png"; sourceTree = "<group>"; };
 		D12D6542133EAA3800BF53D0 /* SendButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SendButtonPressed.png; sourceTree = "<group>"; };
 		D12D6543133EAA3800BF53D0 /* SendButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendButtonPressed@2x.png"; sourceTree = "<group>"; };
+		D157538C134A6C8C00C861FC /* Seriously.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Seriously.xcodeproj; path = Vendor/Seriously/Seriously.xcodeproj; sourceTree = SOURCE_ROOT; };
+		D15753A9134A6FCC00C861FC /* UPApiAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPApiAdapter.h; sourceTree = "<group>"; };
+		D15753AA134A6FCC00C861FC /* UPApiAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPApiAdapter.m; sourceTree = "<group>"; };
+		D15753AE134A711600C861FC /* UPApiAdapterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPApiAdapterDelegate.h; sourceTree = "<group>"; };
 		D18C778E1326F57B003974AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D18C779B1326F635003974AA /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		D1BE64C91348BFA200B448CA /* UPMessageInputFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMessageInputFieldDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +125,9 @@
 				D1BE64C91348BFA200B448CA /* UPMessageInputFieldDelegate.h */,
 				D1BE672B1349229100B448CA /* UPMessageTableViewCell.h */,
 				D1BE672C1349229100B448CA /* UPMessageTableViewCell.m */,
+				D15753A9134A6FCC00C861FC /* UPApiAdapter.h */,
+				D15753AA134A6FCC00C861FC /* UPApiAdapter.m */,
+				D15753AE134A711600C861FC /* UPApiAdapterDelegate.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -149,6 +174,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D157538C134A6C8C00C861FC /* Seriously.xcodeproj */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
@@ -180,6 +206,14 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		D1575392134A6C8C00C861FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D1575396134A6C8C00C861FC /* libSeriously.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D18C77991326F635003974AA /* nibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +236,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D15753A4134A6CA600C861FC /* PBXTargetDependency */,
 			);
 			name = instiBot;
 			productName = instiBot;
@@ -225,12 +260,28 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D1575392134A6C8C00C861FC /* Products */;
+					ProjectRef = D157538C134A6C8C00C861FC /* Seriously.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* instiBot */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D1575396134A6C8C00C861FC /* libSeriously.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSeriously.a;
+			remoteRef = D1575395134A6C8C00C861FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -269,10 +320,19 @@
 				D12D6271133E42F500BF53D0 /* UPMessagesViewController.m in Sources */,
 				D12D629E133E47BA00BF53D0 /* UPMessageInputField.m in Sources */,
 				D1BE672D1349229100B448CA /* UPMessageTableViewCell.m in Sources */,
+				D15753AB134A6FCC00C861FC /* UPApiAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D15753A4134A6CA600C861FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Seriously;
+			targetProxy = D15753A3134A6CA600C861FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
