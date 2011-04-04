@@ -11,6 +11,8 @@
 #import "UPMessageInputField.h"
 #import "UPMessageInputFieldDelegate.h"
 
+#import "UPMessageTableViewCell.h"
+
 @interface UPMessagesViewController ()
 
 - (void)tearDown;
@@ -25,10 +27,21 @@
 @synthesize messageInputField;
 
 - (void)viewDidLoad {
+  messages = [[NSArray arrayWithObjects:
+               @"Lorem ipsum dolor",
+               @"Lorem ipsum dolor sit amet, consetetur ",
+               @"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+               @"Lorem",
+               nil
+               ] retain];
+  
+  tableView.separatorColor = [UIColor clearColor];
+  tableView.backgroundColor = [UIColor clearColor];
+  
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyBoardNotification:) name:UIKeyboardWillShowNotification object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyBoardNotification:) name:UIKeyboardDidShowNotification object:nil];  
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyBoardNotification:) name:UIKeyboardWillHideNotification object:nil];    
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyBoardNotification:) name:UIKeyboardDidHideNotification object:nil];    
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyBoardNotification:) name:UIKeyboardDidHideNotification object:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -113,49 +126,37 @@
 #pragma mark -
 
 - (UITableViewCell *)tableView:(UITableView *)tableView_ cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- 	static NSString *CellIdentifier = @"UPMessageTableViewCell"; 
+ 	NSString *cellIdentifier = [NSString stringWithFormat:@"UPMessageTableViewCell%@", ((indexPath.row % 2) == 0) ? @"Even" : @"Odd"]; 
   
-  UITableViewCell *cell = [tableView_ dequeueReusableCellWithIdentifier:CellIdentifier];
+  UPMessageTableViewCell *cell = (UPMessageTableViewCell *)[tableView_ dequeueReusableCellWithIdentifier:cellIdentifier];
   
+  UPMessageTableViewCellStyle messageStyle = ((indexPath.row % 2) == 0) ? UPMessageTableViewCellStyleEven :UPMessageTableViewCellStyleOdd ;
   if (!cell) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewStylePlain reuseIdentifier:CellIdentifier];
+    cell = [[UPMessageTableViewCell alloc] initWithMessageStyle:messageStyle reuseIdentifier:cellIdentifier];
   }
-  
-  cell.textLabel.text = @"foo";
+  NSString *message = [messages objectAtIndex:indexPath.row];
+  cell.message = message;
   return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 10;
+	return [messages count];
   
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSString *messageForCellAtIndexPath = [messages objectAtIndex:indexPath.row];  
+  
+  CGSize messageSize = [UPMessageTableViewCell sizeForMessageText:messageForCellAtIndexPath];
+  return messageSize.height;
+}
 
 - (void)messageInputField:(UPMessageInputField *)_messageInputField shouldGrowWithDelta:(CGFloat )delta {
-//  CGRect newMessageInputFieldFrame = _messageInputField.frame;
-//  newMessageInputFieldFrame.origin.y -= delta;
-//  newMessageInputFieldFrame.size.height += delta;
-//  _messageInputField.frame = newMessageInputFieldFrame;
-//  
-//  CGRect newTableViewFrame = tableView.frame;
-//  newTableViewFrame.size.height -= delta;
-//  tableView.frame = newTableViewFrame;
-//  
-//  [self.view setNeedsLayout];
   [self adaptSizeForSubviews:delta];
 }
 
 - (void)messageInputField:(UPMessageInputField *)_messageInputField shouldShrinkWithDelta:(CGFloat )delta {
-  CGRect newMessageInputFieldFrame = messageInputField.frame;
-  newMessageInputFieldFrame.origin.y += delta;
-  newMessageInputFieldFrame.size.height -= delta;
-	messageInputField.frame = newMessageInputFieldFrame;
-  
-  CGRect newTableViewFrame = tableView.frame;
-  newTableViewFrame.size.height += delta;
-  tableView.frame = newTableViewFrame;
-  [self.view setNeedsLayout];
-//  [self adaptSizeForSubviews:-delta];
+  [self adaptSizeForSubviews:-delta];
 }
 
 - (void)adaptSizeForSubviews:(CGFloat )delta {

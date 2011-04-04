@@ -18,6 +18,8 @@
   UITableView *tableView;
 
   UPMessageInputField *messageInputField;
+  
+  NSMutableArray *messages;
 }
 
 @property (nonatomic, retain) IBOutlet UPMessageInputField *messageInputField;;
