@@ -16,4 +16,6 @@
 - (void)messageInputField:(UPMessageInputField *)theMessageInputField shouldGrowWithDelta:(CGFloat )delta;
 
 - (void)messageInputField:(UPMessageInputField *)theMessageInputField shouldShrinkWithDelta:(CGFloat )delta;
+
+- (void)messageInputField:(UPMessageInputField *)theMessageInputField didSendMessage:(NSString *)message;
 @end

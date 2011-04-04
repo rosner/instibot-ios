@@ -194,4 +194,8 @@ static NSString *UPUserKey = @"M";
   [self.view setNeedsLayout];
 }
 
+
+- (void)messageInputField:(UPMessageInputField *)theMessageInputField didSendMessage:(NSString *)message {
+	NSLog(@"%s %@", __FUNCTION__, message);
+}
 @end
