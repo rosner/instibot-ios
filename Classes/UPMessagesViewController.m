@@ -13,6 +13,10 @@
 
 #import "UPMessageTableViewCell.h"
 
+static NSString *UPBotKey = @"B";
+
+static NSString *UPUserKey = @"M";
+
 @interface UPMessagesViewController ()
 
 - (void)tearDown;
@@ -28,10 +32,11 @@
 
 - (void)viewDidLoad {
   messages = [[NSArray arrayWithObjects:
-               @"Lorem ipsum dolor",
-               @"Lorem ipsum dolor sit amet, consetetur ",
-               @"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-               @"Lorem",
+               [NSDictionary dictionaryWithObject:@"Lorem ipsum dolor" forKey:UPUserKey],
+               [NSDictionary dictionaryWithObject:@"Lorem ipsum dolor sit amet, consetetur" forKey:UPBotKey],
+               [NSDictionary dictionaryWithObject:@"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.," forKey:UPUserKey],
+               [NSDictionary dictionaryWithObject:@"Lorem" forKey:UPBotKey],
+               [NSDictionary dictionaryWithObject:@"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod" forKey:UPBotKey],
                nil
                ] retain];
   
@@ -126,15 +131,29 @@
 #pragma mark -
 
 - (UITableViewCell *)tableView:(UITableView *)tableView_ cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- 	NSString *cellIdentifier = [NSString stringWithFormat:@"UPMessageTableViewCell%@", ((indexPath.row % 2) == 0) ? @"Even" : @"Odd"]; 
+  NSDictionary *messageDictionary = [messages objectAtIndex:indexPath.row];
+  NSString *message;
+  NSString *evenOrOddSuffix;
+  BOOL messageIsFromUser = NO;
   
+  if ([messageDictionary objectForKey:UPBotKey]) {
+    evenOrOddSuffix = @"Even";
+		message = [messageDictionary objectForKey:UPBotKey];
+    
+  } else {
+    evenOrOddSuffix = @"Odd";
+		message = [messageDictionary objectForKey:UPUserKey];    
+    messageIsFromUser = YES;
+  }
+  
+ 	NSString *cellIdentifier = [NSString stringWithFormat:@"UPMessageTableViewCell%@", evenOrOddSuffix];  
   UPMessageTableViewCell *cell = (UPMessageTableViewCell *)[tableView_ dequeueReusableCellWithIdentifier:cellIdentifier];
   
-  UPMessageTableViewCellStyle messageStyle = ((indexPath.row % 2) == 0) ? UPMessageTableViewCellStyleEven :UPMessageTableViewCellStyleOdd ;
+  
+  UPMessageTableViewCellStyle messageStyle = (messageIsFromUser) ? UPMessageTableViewCellStyleOdd : UPMessageTableViewCellStyleEven;
   if (!cell) {
     cell = [[UPMessageTableViewCell alloc] initWithMessageStyle:messageStyle reuseIdentifier:cellIdentifier];
   }
-  NSString *message = [messages objectAtIndex:indexPath.row];
   cell.message = message;
   return cell;
 }
@@ -145,7 +164,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSString *messageForCellAtIndexPath = [messages objectAtIndex:indexPath.row];  
+	NSDictionary *message = [messages objectAtIndex:indexPath.row];
+  NSString *key = ([message objectForKey:UPBotKey]) ? UPBotKey : UPUserKey;
+  
+	NSString *messageForCellAtIndexPath = [message objectForKey:key];
   
   CGSize messageSize = [UPMessageTableViewCell sizeForMessageText:messageForCellAtIndexPath];
   return messageSize.height;
