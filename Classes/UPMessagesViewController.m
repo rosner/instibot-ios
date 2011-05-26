@@ -16,11 +16,15 @@
 
 #import "UPMessageTableViewCell.h"
 
-static NSString *UPBotKey = @"B";
+#import "NSString+URLEncoding.h"
 
-static NSString *UPUserKey = @"M";
+NSString *const UPBotKey = @"answer";
+
+NSString *const UPUserKey = @"question";
 
 @interface UPMessagesViewController ()
+
+@property (nonatomic, retain) NSArray *messages;
 
 - (void)tearDown;
 
@@ -31,17 +35,23 @@ static NSString *UPUserKey = @"M";
 
 @synthesize tableView;
 
+@synthesize messages;
+
 @synthesize messageInputField;
 
 - (void)viewDidLoad {
-  messages = [[NSArray arrayWithObjects:
-               [NSDictionary dictionaryWithObject:@"Lorem ipsum dolor" forKey:UPUserKey],
-               [NSDictionary dictionaryWithObject:@"Lorem ipsum dolor sit amet, consetetur" forKey:UPBotKey],
-               [NSDictionary dictionaryWithObject:@"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.," forKey:UPUserKey],
-               [NSDictionary dictionaryWithObject:@"Lorem" forKey:UPBotKey],
-               [NSDictionary dictionaryWithObject:@"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod" forKey:UPBotKey],
-               nil
-               ] retain];
+//  messages = [[NSArray arrayWithObjects:
+//               [NSDictionary dictionaryWithObject:@"Lorem ipsum dolor" forKey:UPUserKey],
+//               [NSDictionary dictionaryWithObject:@"Lorem ipsum dolor sit amet, consetetur" forKey:UPBotKey],
+//               [NSDictionary dictionaryWithObject:@"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.," forKey:UPUserKey],
+//               [NSDictionary dictionaryWithObject:@"Lorem" forKey:UPBotKey],
+//               [NSDictionary dictionaryWithObject:@"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod" forKey:UPBotKey],
+//               nil
+//               ] retain];
+
+  messages = [[NSMutableArray alloc] init];
+  
+  previousMessages = 0;
   
   tableView.separatorColor = [UIColor clearColor];
   tableView.backgroundColor = [UIColor clearColor];
@@ -50,6 +60,9 @@ static NSString *UPUserKey = @"M";
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyBoardNotification:) name:UIKeyboardDidShowNotification object:nil];  
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyBoardNotification:) name:UIKeyboardWillHideNotification object:nil];    
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyBoardNotification:) name:UIKeyboardDidHideNotification object:nil];
+  
+  apiAdapter = [[UPApiAdapter alloc] init];
+  apiAdapter.delegate = self;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -59,17 +72,22 @@ static NSString *UPUserKey = @"M";
 
 
 - (void)tearDown {
+  apiAdapter = nil;
+  
  	[tableView release];
   tableView = nil;
   
   [messageInputField release];
   messageInputField = nil;
   
+  [apiAdapter release];
+  apiAdapter = nil; 
+  
+  [messages release];
+  messages = nil;
+  
   // remove the observation of keyboard notifications
-  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
-  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil]; 
-  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
@@ -176,6 +194,10 @@ static NSString *UPUserKey = @"M";
   return messageSize.height;
 }
 
+#pragma mark -
+#pragma mark UPMessageInputFieldDelegate methods
+#pragma mark -
+
 - (void)messageInputField:(UPMessageInputField *)_messageInputField shouldGrowWithDelta:(CGFloat )delta {
   [self adaptSizeForSubviews:delta];
 }
@@ -199,6 +221,59 @@ static NSString *UPUserKey = @"M";
 
 
 - (void)messageInputField:(UPMessageInputField *)theMessageInputField didSendMessage:(NSString *)message {
-	NSLog(@"%s %@", __FUNCTION__, message);
+  [messages addObject:[NSDictionary dictionaryWithObject:message forKey:UPUserKey]];
+  [tableView reloadData];
+  NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([messages count] - 1)  inSection:0];
+  [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+  NSString *urlEncodedMessage = [NSString stringByURLEncoding:message];
+	[apiAdapter reuqestResponseForMessage:urlEncodedMessage];
+}
+
+
+#pragma mark -
+#pragma mark UPApiAdapterDelegate
+#pragma mark -
+- (void)apiAdapterIsReady:(UPApiAdapter *)apiAdapter {
+  NSLog(@"%s", __FUNCTION__);
+}
+
+- (void)apiAdapter:(UPApiAdapter *)apiAdapter didReceiveBotResponses:(NSArray *)responses {
+  NSLog(@"responses %@", responses);                                     
+  
+  NSUInteger previousMessageCount = [messages count];
+  
+  NSUInteger newMessageCount = [responses count];
+
+
+  // if the question contained multiple possible sentences, the bot will try to split them and send pairs of QA-pairs
+  NSRange range;
+  range.location = previousMessageCount;
+  range.length = newMessageCount - previousMessageCount;
+  
+  NSArray *splittedResponses = [responses subarrayWithRange:range];
+  NSLog(@"messagecount %d responsecount %d range: %d %d diff: %@", previousMessageCount, newMessageCount, range.location, range.length, splittedResponses);
+  
+  NSMutableArray *newMessages = [[NSMutableArray alloc] initWithArray:messages];
+  NSMutableString *aggregatedAnswer = [[NSMutableString alloc] init];
+  // iterate over the new responses and aggregate the answer so it doesn't look sentence splitted
+  // we're just interested in the bot part - the answer, the question is already in the messages array
+  for (NSDictionary *currentResponse in splittedResponses) {
+    if ( [currentResponse objectForKey:UPBotKey] ) {
+      NSString *currentQuestionPart = [currentResponse objectForKey:UPBotKey];
+      [aggregatedAnswer appendString:[NSString stringWithFormat:@" %@", currentQuestionPart]];
+    }
+  }
+  // wrap the aggregated answer in a dictionary so the the controller knows if it's an answer or a question
+  [newMessages addObject:[NSDictionary dictionaryWithObject:aggregatedAnswer forKey:UPBotKey]];
+  [aggregatedAnswer release];
+
+
+  self.messages = newMessages;
+  [tableView reloadData];
+  // scroll to end of table view to show the answer
+  NSIndexPath *indexPathForLastCell = [NSIndexPath indexPathForRow:[messages count] - 1 inSection:0];
+  [tableView scrollToRowAtIndexPath:indexPathForLastCell atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+  [newMessages release];
+
 }
 @end

@@ -10,3 +10,4 @@ BetaReleases
 *.xib -crlf -diff -merge
 build
 .svn
+Vendor/*

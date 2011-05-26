@@ -8,18 +8,27 @@
 
 #import <UIKit/UIKit.h>
 #import "UPMessageInputFieldDelegate.h"
+#import "UPApiAdapterDelegate.h"
 
-@class UPMessageInputField;
-@protocol UPMessageInputFieldDelegate;
+extern NSString *const UPBotKey;
 
-@interface UPMessagesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UPMessageInputFieldDelegate> {
+extern NSString *const UPUserKey;
 
-  @private 
+@class UPMessageInputField, UPApiAdapter;
+
+@interface UPMessagesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, 
+UPMessageInputFieldDelegate, UPApiAdapterDelegate> {
+  
+@private 
   UITableView *tableView;
-
+  
   UPMessageInputField *messageInputField;
   
   NSMutableArray *messages;
+  
+  UPApiAdapter *apiAdapter;
+  
+  NSUInteger previousMessages;
 }
 
 @property (nonatomic, retain) IBOutlet UPMessageInputField *messageInputField;;

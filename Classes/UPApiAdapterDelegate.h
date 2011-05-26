@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class UPApiAdapter;
 
 @protocol UPApiAdapterDelegate <NSObject>
 
 
 @optional
 
-- (void)apiAdapter:(UPApiAdapter *)apiAdapter didReceiveBotResponse:(NSString *)answer;
+- (void)apiAdapterIsReady:(UPApiAdapter *)apiAdapter;
+
+- (void)apiAdapter:(UPApiAdapter *)apiAdapter didReceiveBotResponses:(NSArray *)responses;
 
 @end

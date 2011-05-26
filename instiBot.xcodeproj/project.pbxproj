@@ -32,27 +32,22 @@
 		D12D6551133EAA3800BF53D0 /* SendButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6542133EAA3800BF53D0 /* SendButtonPressed.png */; };
 		D12D6552133EAA3800BF53D0 /* SendButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D12D6543133EAA3800BF53D0 /* SendButtonPressed@2x.png */; };
 		D15753AB134A6FCC00C861FC /* UPApiAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = D15753AA134A6FCC00C861FC /* UPApiAdapter.m */; };
+		D1575473134A852D00C861FC /* SeriouslyJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D1575455134A852D00C861FC /* SeriouslyJSON.m */; };
+		D1575474134A852D00C861FC /* yajl.c in Sources */ = {isa = PBXBuildFile; fileRef = D157545B134A852D00C861FC /* yajl.c */; };
+		D1575475134A852D00C861FC /* yajl_alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = D157545C134A852D00C861FC /* yajl_alloc.c */; };
+		D1575476134A852D00C861FC /* yajl_buf.c in Sources */ = {isa = PBXBuildFile; fileRef = D157545E134A852D00C861FC /* yajl_buf.c */; };
+		D1575477134A852D00C861FC /* yajl_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = D1575462134A852D00C861FC /* yajl_encode.c */; };
+		D1575478134A852D00C861FC /* yajl_gen.c in Sources */ = {isa = PBXBuildFile; fileRef = D1575464134A852D00C861FC /* yajl_gen.c */; };
+		D1575479134A852D00C861FC /* yajl_lex.c in Sources */ = {isa = PBXBuildFile; fileRef = D1575466134A852D00C861FC /* yajl_lex.c */; };
+		D157547A134A852D00C861FC /* yajl_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = D1575469134A852D00C861FC /* yajl_parser.c */; };
+		D157547B134A852D00C861FC /* Seriously.m in Sources */ = {isa = PBXBuildFile; fileRef = D157546C134A852D00C861FC /* Seriously.m */; };
+		D157547C134A852D00C861FC /* SeriouslyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D157546F134A852D00C861FC /* SeriouslyOperation.m */; };
+		D157547D134A852D00C861FC /* SeriouslyXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D1575472134A852D00C861FC /* SeriouslyXML.m */; };
+		D15754CE134BBC4500C861FC /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D15754CD134BBC4500C861FC /* NSString+URLEncoding.m */; };
 		D18C778F1326F57B003974AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18C778E1326F57B003974AA /* QuartzCore.framework */; };
 		D18C779D1326F635003974AA /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D18C779B1326F635003974AA /* MainWindow.xib */; };
 		D1BE672D1349229100B448CA /* UPMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE672C1349229100B448CA /* UPMessageTableViewCell.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D1575395134A6C8C00C861FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D157538C134A6C8C00C861FC /* Seriously.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libSeriously.a */;
-			remoteInfo = Seriously;
-		};
-		D15753A3134A6CA600C861FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D157538C134A6C8C00C861FC /* Seriously.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* Seriously */;
-			remoteInfo = Seriously;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -85,10 +80,39 @@
 		D12D6541133EAA3800BF53D0 /* SendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendButton@2x.png"; sourceTree = "<group>"; };
 		D12D6542133EAA3800BF53D0 /* SendButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SendButtonPressed.png; sourceTree = "<group>"; };
 		D12D6543133EAA3800BF53D0 /* SendButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendButtonPressed@2x.png"; sourceTree = "<group>"; };
-		D157538C134A6C8C00C861FC /* Seriously.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Seriously.xcodeproj; path = Vendor/Seriously/Seriously.xcodeproj; sourceTree = SOURCE_ROOT; };
 		D15753A9134A6FCC00C861FC /* UPApiAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPApiAdapter.h; sourceTree = "<group>"; };
 		D15753AA134A6FCC00C861FC /* UPApiAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPApiAdapter.m; sourceTree = "<group>"; };
 		D15753AE134A711600C861FC /* UPApiAdapterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPApiAdapterDelegate.h; sourceTree = "<group>"; };
+		D1575454134A852D00C861FC /* SeriouslyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriouslyJSON.h; sourceTree = "<group>"; };
+		D1575455134A852D00C861FC /* SeriouslyJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriouslyJSON.m; sourceTree = "<group>"; };
+		D1575458134A852D00C861FC /* yajl_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_common.h; sourceTree = "<group>"; };
+		D1575459134A852D00C861FC /* yajl_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_gen.h; sourceTree = "<group>"; };
+		D157545A134A852D00C861FC /* yajl_parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_parse.h; sourceTree = "<group>"; };
+		D157545B134A852D00C861FC /* yajl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl.c; sourceTree = "<group>"; };
+		D157545C134A852D00C861FC /* yajl_alloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_alloc.c; sourceTree = "<group>"; };
+		D157545D134A852D00C861FC /* yajl_alloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_alloc.h; sourceTree = "<group>"; };
+		D157545E134A852D00C861FC /* yajl_buf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_buf.c; sourceTree = "<group>"; };
+		D157545F134A852D00C861FC /* yajl_buf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_buf.h; sourceTree = "<group>"; };
+		D1575460134A852D00C861FC /* yajl_bytestack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_bytestack.h; sourceTree = "<group>"; };
+		D1575461134A852D00C861FC /* yajl_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_common.h; sourceTree = "<group>"; };
+		D1575462134A852D00C861FC /* yajl_encode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_encode.c; sourceTree = "<group>"; };
+		D1575463134A852D00C861FC /* yajl_encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_encode.h; sourceTree = "<group>"; };
+		D1575464134A852D00C861FC /* yajl_gen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_gen.c; sourceTree = "<group>"; };
+		D1575465134A852D00C861FC /* yajl_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_gen.h; sourceTree = "<group>"; };
+		D1575466134A852D00C861FC /* yajl_lex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_lex.c; sourceTree = "<group>"; };
+		D1575467134A852D00C861FC /* yajl_lex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_lex.h; sourceTree = "<group>"; };
+		D1575468134A852D00C861FC /* yajl_parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_parse.h; sourceTree = "<group>"; };
+		D1575469134A852D00C861FC /* yajl_parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_parser.c; sourceTree = "<group>"; };
+		D157546A134A852D00C861FC /* yajl_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_parser.h; sourceTree = "<group>"; };
+		D157546B134A852D00C861FC /* Seriously.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seriously.h; sourceTree = "<group>"; };
+		D157546C134A852D00C861FC /* Seriously.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seriously.m; sourceTree = "<group>"; };
+		D157546D134A852D00C861FC /* SeriouslyConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriouslyConstants.h; sourceTree = "<group>"; };
+		D157546E134A852D00C861FC /* SeriouslyOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriouslyOperation.h; sourceTree = "<group>"; };
+		D157546F134A852D00C861FC /* SeriouslyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriouslyOperation.m; sourceTree = "<group>"; };
+		D1575471134A852D00C861FC /* SeriouslyXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriouslyXML.h; sourceTree = "<group>"; };
+		D1575472134A852D00C861FC /* SeriouslyXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriouslyXML.m; sourceTree = "<group>"; };
+		D15754CC134BBC4500C861FC /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		D15754CD134BBC4500C861FC /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		D18C778E1326F57B003974AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D18C779B1326F635003974AA /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		D1BE64C91348BFA200B448CA /* UPMessageInputFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMessageInputFieldDelegate.h; sourceTree = "<group>"; };
@@ -128,6 +152,8 @@
 				D15753A9134A6FCC00C861FC /* UPApiAdapter.h */,
 				D15753AA134A6FCC00C861FC /* UPApiAdapter.m */,
 				D15753AE134A711600C861FC /* UPApiAdapterDelegate.h */,
+				D15754CC134BBC4500C861FC /* NSString+URLEncoding.h */,
+				D15754CD134BBC4500C861FC /* NSString+URLEncoding.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -143,6 +169,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				D1575452134A852D00C861FC /* Seriously */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -174,7 +201,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D157538C134A6C8C00C861FC /* Seriously.xcodeproj */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
@@ -206,12 +232,72 @@
 			path = images;
 			sourceTree = "<group>";
 		};
-		D1575392134A6C8C00C861FC /* Products */ = {
+		D1575452134A852D00C861FC /* Seriously */ = {
 			isa = PBXGroup;
 			children = (
-				D1575396134A6C8C00C861FC /* libSeriously.a */,
+				D1575453134A852D00C861FC /* json */,
+				D157546B134A852D00C861FC /* Seriously.h */,
+				D157546C134A852D00C861FC /* Seriously.m */,
+				D157546D134A852D00C861FC /* SeriouslyConstants.h */,
+				D157546E134A852D00C861FC /* SeriouslyOperation.h */,
+				D157546F134A852D00C861FC /* SeriouslyOperation.m */,
+				D1575470134A852D00C861FC /* xml */,
 			);
-			name = Products;
+			name = Seriously;
+			path = Vendor/Seriously/src;
+			sourceTree = "<group>";
+		};
+		D1575453134A852D00C861FC /* json */ = {
+			isa = PBXGroup;
+			children = (
+				D1575454134A852D00C861FC /* SeriouslyJSON.h */,
+				D1575455134A852D00C861FC /* SeriouslyJSON.m */,
+				D1575456134A852D00C861FC /* yajl */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		D1575456134A852D00C861FC /* yajl */ = {
+			isa = PBXGroup;
+			children = (
+				D1575457134A852D00C861FC /* api */,
+				D157545B134A852D00C861FC /* yajl.c */,
+				D157545C134A852D00C861FC /* yajl_alloc.c */,
+				D157545D134A852D00C861FC /* yajl_alloc.h */,
+				D157545E134A852D00C861FC /* yajl_buf.c */,
+				D157545F134A852D00C861FC /* yajl_buf.h */,
+				D1575460134A852D00C861FC /* yajl_bytestack.h */,
+				D1575461134A852D00C861FC /* yajl_common.h */,
+				D1575462134A852D00C861FC /* yajl_encode.c */,
+				D1575463134A852D00C861FC /* yajl_encode.h */,
+				D1575464134A852D00C861FC /* yajl_gen.c */,
+				D1575465134A852D00C861FC /* yajl_gen.h */,
+				D1575466134A852D00C861FC /* yajl_lex.c */,
+				D1575467134A852D00C861FC /* yajl_lex.h */,
+				D1575468134A852D00C861FC /* yajl_parse.h */,
+				D1575469134A852D00C861FC /* yajl_parser.c */,
+				D157546A134A852D00C861FC /* yajl_parser.h */,
+			);
+			path = yajl;
+			sourceTree = "<group>";
+		};
+		D1575457134A852D00C861FC /* api */ = {
+			isa = PBXGroup;
+			children = (
+				D1575458134A852D00C861FC /* yajl_common.h */,
+				D1575459134A852D00C861FC /* yajl_gen.h */,
+				D157545A134A852D00C861FC /* yajl_parse.h */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		D1575470134A852D00C861FC /* xml */ = {
+			isa = PBXGroup;
+			children = (
+				D1575471134A852D00C861FC /* SeriouslyXML.h */,
+				D1575472134A852D00C861FC /* SeriouslyXML.m */,
+			);
+			path = xml;
 			sourceTree = "<group>";
 		};
 		D18C77991326F635003974AA /* nibs */ = {
@@ -236,7 +322,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D15753A4134A6CA600C861FC /* PBXTargetDependency */,
 			);
 			name = instiBot;
 			productName = instiBot;
@@ -260,28 +345,12 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D1575392134A6C8C00C861FC /* Products */;
-					ProjectRef = D157538C134A6C8C00C861FC /* Seriously.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* instiBot */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D1575396134A6C8C00C861FC /* libSeriously.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSeriously.a;
-			remoteRef = D1575395134A6C8C00C861FC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -321,18 +390,22 @@
 				D12D629E133E47BA00BF53D0 /* UPMessageInputField.m in Sources */,
 				D1BE672D1349229100B448CA /* UPMessageTableViewCell.m in Sources */,
 				D15753AB134A6FCC00C861FC /* UPApiAdapter.m in Sources */,
+				D1575473134A852D00C861FC /* SeriouslyJSON.m in Sources */,
+				D1575474134A852D00C861FC /* yajl.c in Sources */,
+				D1575475134A852D00C861FC /* yajl_alloc.c in Sources */,
+				D1575476134A852D00C861FC /* yajl_buf.c in Sources */,
+				D1575477134A852D00C861FC /* yajl_encode.c in Sources */,
+				D1575478134A852D00C861FC /* yajl_gen.c in Sources */,
+				D1575479134A852D00C861FC /* yajl_lex.c in Sources */,
+				D157547A134A852D00C861FC /* yajl_parser.c in Sources */,
+				D157547B134A852D00C861FC /* Seriously.m in Sources */,
+				D157547C134A852D00C861FC /* SeriouslyOperation.m in Sources */,
+				D157547D134A852D00C861FC /* SeriouslyXML.m in Sources */,
+				D15754CE134BBC4500C861FC /* NSString+URLEncoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D15753A4134A6CA600C861FC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Seriously;
-			targetProxy = D15753A3134A6CA600C861FC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
@@ -340,11 +413,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vendor/Seriously\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = instiBot_Prefix.pch;
-				HEADER_SEARCH_PATHS = ssmessagesviewcontroller/Demo/SSToolkit/;
+				HEADER_SEARCH_PATHS = Vendor/Seriously/Classes;
 				INFOPLIST_FILE = "instiBot-Info.plist";
 				PRODUCT_NAME = instiBot;
 			};
@@ -355,9 +432,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vendor/Seriously\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = instiBot_Prefix.pch;
-				HEADER_SEARCH_PATHS = ssmessagesviewcontroller/Demo/SSToolkit/;
+				HEADER_SEARCH_PATHS = Vendor/Seriously/Classes;
 				INFOPLIST_FILE = "instiBot-Info.plist";
 				PRODUCT_NAME = instiBot;
 				VALIDATE_PRODUCT = YES;
@@ -371,6 +452,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ssmessagesviewcontroller/Demo/SSToolkit/;
@@ -390,6 +472,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ssmessagesviewcontroller/Demo/SSToolkit/;

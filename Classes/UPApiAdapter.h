@@ -15,13 +15,11 @@
   @private 
   NSString *userId;
   
-  NSString *botId;
-  
-  NSString *server;
-
   id<UPApiAdapterDelegate> delegate;
 }
 
 @property (nonatomic, assign) id<UPApiAdapterDelegate> delegate;
+
+- (void)reuqestResponseForMessage:(NSString *)message;
 
 @end
