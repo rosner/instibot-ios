@@ -29,6 +29,7 @@ NSString *const UPUserKey = @"question";
 - (void)tearDown;
 
 - (void)adaptSizeForSubviews:(CGFloat )delta;
+
 @end
 
 @implementation UPMessagesViewController
@@ -51,7 +52,8 @@ NSString *const UPUserKey = @"question";
 
   messages = [[NSMutableArray alloc] init];
   
-  previousMessages = 0;
+  numberOfAnswers = 0;
+  numberOfQuestions = 0;
   
   tableView.separatorColor = [UIColor clearColor];
   tableView.backgroundColor = [UIColor clearColor];
@@ -238,42 +240,45 @@ NSString *const UPUserKey = @"question";
 }
 
 - (void)apiAdapter:(UPApiAdapter *)apiAdapter didReceiveBotResponses:(NSArray *)responses {
-  NSLog(@"responses %@", responses);                                     
   
-  NSUInteger previousMessageCount = [messages count];
+  NSLog(@"responses %d %@", [responses count], responses);                                   
   
-  NSUInteger newMessageCount = [responses count];
-
-
-  // if the question contained multiple possible sentences, the bot will try to split them and send pairs of QA-pairs
-  NSRange range;
-  range.location = previousMessageCount;
-  range.length = newMessageCount - previousMessageCount;
-  
-  NSArray *splittedResponses = [responses subarrayWithRange:range];
-  NSLog(@"messagecount %d responsecount %d range: %d %d diff: %@", previousMessageCount, newMessageCount, range.location, range.length, splittedResponses);
-  
-  NSMutableArray *newMessages = [[NSMutableArray alloc] initWithArray:messages];
-  NSMutableString *aggregatedAnswer = [[NSMutableString alloc] init];
-  // iterate over the new responses and aggregate the answer so it doesn't look sentence splitted
-  // we're just interested in the bot part - the answer, the question is already in the messages array
-  for (NSDictionary *currentResponse in splittedResponses) {
-    if ( [currentResponse objectForKey:UPBotKey] ) {
-      NSString *currentQuestionPart = [currentResponse objectForKey:UPBotKey];
-      [aggregatedAnswer appendString:[NSString stringWithFormat:@" %@", currentQuestionPart]];
+  // calculate the number of question and answers responded
+  NSMutableArray *answers = [[NSMutableArray alloc] init];
+  [responses enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
+    if ( [obj valueForKey:UPBotKey] ) {
+      [answers addObject:[obj objectForKey:UPBotKey]];
     }
-  }
-  // wrap the aggregated answer in a dictionary so the the controller knows if it's an answer or a question
-  [newMessages addObject:[NSDictionary dictionaryWithObject:aggregatedAnswer forKey:UPBotKey]];
-  [aggregatedAnswer release];
-
-
-  self.messages = newMessages;
-  [tableView reloadData];
-  // scroll to end of table view to show the answer
-  NSIndexPath *indexPathForLastCell = [NSIndexPath indexPathForRow:[messages count] - 1 inSection:0];
-  [tableView scrollToRowAtIndexPath:indexPathForLastCell atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-  [newMessages release];
+  }];
+  
+  NSUInteger numberOfNewAnswers = [answers count] - numberOfAnswers;
+  NSLog(@"number of new Answers %d", numberOfNewAnswers);
+  
+  if ( numberOfNewAnswers > 0 ) {
+    // get the new answers from the responses
+    NSInteger indexForNewAnswers = [answers count] - numberOfNewAnswers;
+    indexForNewAnswers = (indexForNewAnswers < 0) ? 0 : indexForNewAnswers;
+    NSRange range = NSMakeRange(indexForNewAnswers, numberOfNewAnswers);
+    NSLog(@"index of new answers: %d", indexForNewAnswers);
+    NSArray *newAnswers = [answers subarrayWithRange:range];
+    NSLog(@"new answers: %@", newAnswers);
+    
+    // concatenate the new answers so it looks like the bot is answering in on response
+    NSString *aggregatedAnswer = [newAnswers componentsJoinedByString:@" "];
+    NSLog(@"%@", aggregatedAnswer);
+  } 
+  
+  numberOfAnswers += numberOfNewAnswers;
+  [answers release];
+  
+  
+   
+//  self.messages = newMessages;
+//  [tableView reloadData];
+//  // scroll to end of table view to show the answer
+//  NSIndexPath *indexPathForLastCell = [NSIndexPath indexPathForRow:[messages count] - 1 inSection:0];
+//  [tableView scrollToRowAtIndexPath:indexPathForLastCell atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+//  [newMessages release];
 
 }
 @end

@@ -1,3 +1,6 @@
 [submodule "Vendor/Seriously"]
 	path = Vendor/Seriously
 	url = https://github.com/probablycorey/seriously.git
+[submodule "Vendor/RegexKitLite"]
+	path = Vendor/RegexKitLite
+	url = https://github.com/wezm/RegexKitLite.git
