@@ -18,6 +18,8 @@
 
 #import "NSString+URLEncoding.h"
 
+#import "RegexKitLite.h"
+
 NSString *const UPBotKey = @"answer";
 
 NSString *const UPUserKey = @"question";
@@ -53,7 +55,6 @@ NSString *const UPUserKey = @"question";
   messages = [[NSMutableArray alloc] init];
   
   numberOfAnswers = 0;
-  numberOfQuestions = 0;
   
   tableView.separatorColor = [UIColor clearColor];
   tableView.backgroundColor = [UIColor clearColor];
@@ -265,20 +266,24 @@ NSString *const UPUserKey = @"question";
     
     // concatenate the new answers so it looks like the bot is answering in on response
     NSString *aggregatedAnswer = [newAnswers componentsJoinedByString:@" "];
-    NSLog(@"%@", aggregatedAnswer);
+    
+    NSLog(@"Raw aggregated answer: '%@'", aggregatedAnswer);
+    // clean the aggregated answer so that there's just one white space between a token.
+    NSString *cleanedAggregatedAnswer = [aggregatedAnswer stringByReplacingOccurrencesOfRegex:@"\\s+" withString:@" "];
+    NSLog(@"cleaned answer: '%@'", cleanedAggregatedAnswer);
+
+    // update the table view
+    NSDictionary *newMessage = [NSDictionary dictionaryWithObject:cleanedAggregatedAnswer forKey:UPBotKey];
+    [messages addObject:newMessage];
+    [tableView reloadData];
+    // scroll to end of table view to show the answer
+    NSIndexPath *indexPathForLastCell = [NSIndexPath indexPathForRow:[messages count] - 1 inSection:0];
+    [tableView scrollToRowAtIndexPath:indexPathForLastCell atScrollPosition:UITableViewScrollPositionBottom animated:YES];
   } 
   
   numberOfAnswers += numberOfNewAnswers;
   [answers release];
   
-  
-   
-//  self.messages = newMessages;
-//  [tableView reloadData];
-//  // scroll to end of table view to show the answer
-//  NSIndexPath *indexPathForLastCell = [NSIndexPath indexPathForRow:[messages count] - 1 inSection:0];
-//  [tableView scrollToRowAtIndexPath:indexPathForLastCell atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-//  [newMessages release];
 
 }
 @end

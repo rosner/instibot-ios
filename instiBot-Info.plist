@@ -26,5 +26,13 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
+	<key>UPContext</key>
+	<string></string>
+	<key>UPHostname</key>
+	<string>http://localhost</string>
+	<key>UPPort</key>
+	<integer>58080</integer>
+	<key>UPBotId</key>
+	<string>fe64a45a9e346bff</string>
 </dict>
 </plist>

@@ -15,25 +15,36 @@
 
 //- (void)requestUserCredentialsForBotId:(NSString *)theBotId;
 
+- (NSString *)stringForApi:(NSString *)methodName;
+
+@property (nonatomic, readonly) NSString *server;
+
+@property (nonatomic, readonly) NSString *botId;
+
+@property (nonatomic, readonly) NSString *context;
+
+@property (readonly) NSUInteger port;
+
 @end
 
 @implementation UPApiAdapter
 
-static NSString *MY_SERVER = @"http://localhost:58080/api";
-
-static NSString *BOT_ID = @"fe64a45a9e346bff";
+@synthesize server, botId, port, context;
 
 @synthesize delegate;
 
 - (id)init {
   self = [super init];
-  if (self) {
-    NSString *urlString = [NSString stringWithFormat:@"%@/bot/user_credentials/%@", MY_SERVER, BOT_ID];
+  if (self) {    
+    NSString *urlString = [self stringForApi:@"user_credentials"];
+    NSLog(@"request: %@", urlString);
 		[Seriously get:urlString handler:^(id body, NSHTTPURLResponse *response, NSError *error) {
       if (error) {
         NSLog(@"Error: %@", [error localizedDescription]);
-      } else {
-				userId = [[body objectForKey:@"user_id"] copy];
+      } else if ( [body isKindOfClass:[NSDictionary class]] ){
+        if ( [body objectForKey:@"user_id"] ) {
+          userId = [[body objectForKey:@"user_id"] copy];
+        }
         if (delegate && [delegate respondsToSelector:@selector(apiAdapterIsReady:)]) {
 					[delegate apiAdapterIsReady:self]; 
         }
@@ -45,7 +56,12 @@ static NSString *BOT_ID = @"fe64a45a9e346bff";
 
 - (void)reuqestResponseForMessage:(NSString *)message {
   if (userId) {
-    NSString *urlString = [NSString stringWithFormat:@"%@/bot/respond/%@/%@/%@", MY_SERVER, BOT_ID, userId, message];
+    NSString *urlString = [NSString stringWithFormat:@"%@/%@/%@",
+                           [self stringForApi:@"respond"],
+                           userId,
+                           message
+                           ];
+    NSLog(@"request: %@", urlString);
     [Seriously get:urlString handler:^(id body, NSHTTPURLResponse *response, NSError *error) {
       if (error) {
 //				NSLog(@"%@", [error localizedDescription]); 
@@ -69,6 +85,46 @@ static NSString *BOT_ID = @"fe64a45a9e346bff";
       }
     }];
   }
+}
+
+- (NSString *)server {
+  return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"UPHostname"];
+}
+
+- (NSString *)botId {
+  NSString *_botId = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"UPBotId"];
+  if ( !_botId ) {
+    _botId = @"";
+  }
+  return _botId;
+}
+
+- (NSString *)context {
+  NSString *_context = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"UPContext"];
+  if ( !_context ) {
+    _context = @"";
+  }
+  return _context;
+}
+
+- (NSUInteger )port {
+  NSNumber *_port = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"UPPort"];
+  
+  NSUInteger portAsInt = ( !_port ) ? 80 : [_port intValue];
+  return portAsInt ;
+}
+
+- (NSString *)stringForApi:(NSString *)methodName {
+  NSString *thePort = [NSString stringWithFormat:@":%d", self.port];
+  NSString *theContext = ( !self.context ) ? [NSString stringWithFormat:@"/%@/", self.context] : @"";
+  
+  NSString *urlString = [NSString stringWithFormat:@"%@%@%@/api/bot/%@/%@", 
+                         self.server, 
+                         thePort, 
+                         theContext, 
+                         methodName,
+                         self.botId];
+  return urlString;
 }
 
 - (void)dealloc {

@@ -26,8 +26,6 @@ UPMessageInputFieldDelegate, UPApiAdapterDelegate> {
   
   // contains the messages. A message is a Dictionary with a question and an answer
   NSMutableArray *messages;
-  // number of questions in the messages
-  NSUInteger numberOfQuestions;
   // number of answers in the messages
   NSUInteger numberOfAnswers;
   
