@@ -11,4 +11,4 @@ Since this project uses [Seriously](https://github.com/probablycorey/seriously) 
       git submodule update
 
 #Configuring API endpoint
-There are additional keys in the Info.plist (`UPBotId, UPContext, UPHostname, UPPort` . You need to change those to match your environment. See again [instibot server](https://github.com/rosner/instibot "Instibot server project on github") project for further information. The values configured so far should work with the default server properties.
+There are additional keys in the Info.plist (`UPBotId, UPContext, UPHostname, UPPort`) . You need to change those to match your environment. See again [instibot server](https://github.com/rosner/instibot "Instibot server project on github") project for further information. The values configured so far should work with the default server properties.
