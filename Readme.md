@@ -3,7 +3,12 @@ It's basically one client for the [instibot server](https://github.com/rosner/in
 
 #Screenshots
 Everybody wants images, here they go!  
-*![](https://github.com/rosner/instibot-ios/raw/master/doc/1.png)  
-*![](https://github.com/rosner/instibot-ios/raw/master/doc/2.png)  
-*![](https://github.com/rosner/instibot-ios/raw/master/doc/3.png)  
-*![](https://github.com/rosner/instibot-ios/raw/master/doc/4.png)  
+![](https://github.com/rosner/instibot-ios/raw/master/doc/screens.png)
+
+# Init submodules
+Since this project uses [Seriously](https://github.com/probablycorey/seriously) and [RegexKitLite](https://github.com/wezm/RegexKitLite) as git submodules you need to init and update them with the following commands:  
+`git submodule init`  
+`git submodule update`
+
+#Configuring API endpoint
+There are additional keys in the Info.plist. You need to change those to match your environment. See again [instibot server](https://github.com/rosner/instibot "Instibot server project on github") project for further information. The values configured so far should work with the default server properties.

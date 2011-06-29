@@ -44,6 +44,7 @@
 		D157547C134A852D00C861FC /* SeriouslyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D157546F134A852D00C861FC /* SeriouslyOperation.m */; };
 		D157547D134A852D00C861FC /* SeriouslyXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D1575472134A852D00C861FC /* SeriouslyXML.m */; };
 		D15754CE134BBC4500C861FC /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D15754CD134BBC4500C861FC /* NSString+URLEncoding.m */; };
+		D15C5D7113AA5D40001C5130 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = D15C5D4F13AA5D40001C5130 /* RegexKitLite.m */; };
 		D18C778F1326F57B003974AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18C778E1326F57B003974AA /* QuartzCore.framework */; };
 		D18C779D1326F635003974AA /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D18C779B1326F635003974AA /* MainWindow.xib */; };
 		D1BE672D1349229100B448CA /* UPMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE672C1349229100B448CA /* UPMessageTableViewCell.m */; };
@@ -113,6 +114,8 @@
 		D1575472134A852D00C861FC /* SeriouslyXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriouslyXML.m; sourceTree = "<group>"; };
 		D15754CC134BBC4500C861FC /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
 		D15754CD134BBC4500C861FC /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		D15C5D4D13AA5D40001C5130 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		D15C5D4F13AA5D40001C5130 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		D18C778E1326F57B003974AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D18C779B1326F635003974AA /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		D1BE64C91348BFA200B448CA /* UPMessageInputFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMessageInputFieldDelegate.h; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				D15C5D1A13AA5D40001C5130 /* RegexKitLite */,
 				D1575452134A852D00C861FC /* Seriously */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -300,6 +304,16 @@
 			path = xml;
 			sourceTree = "<group>";
 		};
+		D15C5D1A13AA5D40001C5130 /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				D15C5D4D13AA5D40001C5130 /* RegexKitLite.h */,
+				D15C5D4F13AA5D40001C5130 /* RegexKitLite.m */,
+			);
+			name = RegexKitLite;
+			path = Vendor/RegexKitLite;
+			sourceTree = "<group>";
+		};
 		D18C77991326F635003974AA /* nibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +416,7 @@
 				D157547C134A852D00C861FC /* SeriouslyOperation.m in Sources */,
 				D157547D134A852D00C861FC /* SeriouslyXML.m in Sources */,
 				D15754CE134BBC4500C861FC /* NSString+URLEncoding.m in Sources */,
+				D15C5D7113AA5D40001C5130 /* RegexKitLite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +474,7 @@
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
+					"-licucore",
 				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
@@ -470,6 +486,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -480,8 +497,10 @@
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
+					"-licucore",
 				);
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

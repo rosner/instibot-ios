@@ -31,8 +31,8 @@
 	<key>UPContext</key>
 	<string></string>
 	<key>UPHostname</key>
-	<string>http://localhost</string>
+	<string>http://rosner.io</string>
 	<key>UPPort</key>
-	<integer>8080</integer>
+	<integer>58080</integer>
 </dict>
 </plist>
