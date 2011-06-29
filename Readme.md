@@ -3,4 +3,4 @@ It's basically one client for the [instibot server](https://github.com/rosner/in
 
 #Screenshots
 Everybody wants images, here they go!  
-![Foo](https://github.com/rosner/instibot-ios/blob/master/doc/1.png)
+![](https://github.com/rosner/instibot-ios/raw/master/doc/1.png)
